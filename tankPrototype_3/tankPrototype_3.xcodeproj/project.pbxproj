@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* tankPrototype_3AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* tankPrototype_3AppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		28193060112F816700ECF9B4 /* tankPrototype_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2819305F112F816700ECF9B4 /* tankPrototype_3.xcdatamodeld */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
+		F0248E2E123F1694005ECF75 /* Sounds.m in Sources */ = {isa = PBXBuildFile; fileRef = F0248E2D123F1694005ECF75 /* Sounds.m */; };
+		F0248EEF123F252A005ECF75 /* laserNoise.wav in Resources */ = {isa = PBXBuildFile; fileRef = F0248EEE123F252A005ECF75 /* laserNoise.wav */; };
+		F0248F25123F2589005ECF75 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0248F24123F2589005ECF75 /* AudioToolbox.framework */; };
+		F0272CBB123DF337004CC775 /* explosion1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0272CB7123DF337004CC775 /* explosion1-1.png */; };
+		F0272CBC123DF337004CC775 /* explosion1-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F0272CB8123DF337004CC775 /* explosion1-2.png */; };
+		F0272CBD123DF337004CC775 /* explosion1-3.png in Resources */ = {isa = PBXBuildFile; fileRef = F0272CB9123DF337004CC775 /* explosion1-3.png */; };
+		F0272CBE123DF337004CC775 /* explosion1-4.png in Resources */ = {isa = PBXBuildFile; fileRef = F0272CBA123DF337004CC775 /* explosion1-4.png */; };
+		F02BF25E122E5F5800A04E46 /* DefineAllConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F02BF25D122E5F5800A04E46 /* DefineAllConstants.m */; };
+		F02BF29D122E619C00A04E46 /* playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F02BF29C122E619C00A04E46 /* playBtn.png */; };
+		F03B04EC1225E89B0073A340 /* Weapon.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B04EB1225E89B0073A340 /* Weapon.m */; };
+		F03B04EF1225E8AB0073A340 /* UserTank.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B04EE1225E8AB0073A340 /* UserTank.m */; };
+		F049E974122678D4006DB0AB /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F049E972122678D4006DB0AB /* MainMenuViewController.m */; };
+		F049E975122678D4006DB0AB /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F049E973122678D4006DB0AB /* MainMenuViewController.xib */; };
+		F049E979122678E2006DB0AB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F049E977122678E2006DB0AB /* SettingsViewController.m */; };
+		F049E97A122678E2006DB0AB /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F049E978122678E2006DB0AB /* SettingsViewController.xib */; };
+		F049E97E122678EE006DB0AB /* GamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F049E97C122678EE006DB0AB /* GamePlayViewController.m */; };
+		F049E97F122678EE006DB0AB /* GamePlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F049E97D122678EE006DB0AB /* GamePlayViewController.xib */; };
+		F08E24551227E243004DFD3E /* cancelBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F08E24541227E243004DFD3E /* cancelBtn.png */; };
+		F08F9168122772D900A415A0 /* buttonBG.png in Resources */ = {isa = PBXBuildFile; fileRef = F08F9167122772D900A415A0 /* buttonBG.png */; };
+		F08F91861227792D00A415A0 /* HiScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08F91841227792D00A415A0 /* HiScoresViewController.m */; };
+		F08F91871227792D00A415A0 /* HiScoresViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08F91851227792D00A415A0 /* HiScoresViewController.xib */; };
+		F08F918B1227794700A415A0 /* HowToPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08F91891227794700A415A0 /* HowToPlayViewController.m */; };
+		F08F918C1227794700A415A0 /* HowToPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08F918A1227794700A415A0 /* HowToPlayViewController.xib */; };
+		F08F91AB1227857200A415A0 /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F08F91AA1227857200A415A0 /* GameEngine.m */; };
+		F08F91AE1227858B00A415A0 /* EnemyTank.m in Sources */ = {isa = PBXBuildFile; fileRef = F08F91AD1227858B00A415A0 /* EnemyTank.m */; };
+		F08F91DD122786F200A415A0 /* pauseBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F08F91DC122786F200A415A0 /* pauseBtn.png */; };
+		F09A4AD31238B9BD00E9A2A0 /* emptyTerrain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F09A4AD11238B9BD00E9A2A0 /* emptyTerrain.jpg */; };
+		F09A4AD41238B9BD00E9A2A0 /* terrain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F09A4AD21238B9BD00E9A2A0 /* terrain.jpg */; };
+		F0D22A0412263874003E015B /* bullet1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D229F612263873003E015B /* bullet1.png */; };
+		F0D22A0612263874003E015B /* enemyTank1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D229F812263873003E015B /* enemyTank1.png */; };
+		F0D22A0712263874003E015B /* laser_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D229F912263873003E015B /* laser_icon.png */; };
+		F0D22A0812263874003E015B /* nuke_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D229FA12263873003E015B /* nuke_icon.png */; };
+		F0D22A0912263874003E015B /* playerTank.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D229FB12263873003E015B /* playerTank.png */; };
+		F0D22A0A12263874003E015B /* rightSideStrip.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D229FC12263873003E015B /* rightSideStrip.png */; };
+		F0D22A0B12263874003E015B /* rocket_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D229FD12263873003E015B /* rocket_icon.png */; };
+		F0D22A0C12263874003E015B /* rocket.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D229FE12263873003E015B /* rocket.png */; };
+		F0D22A0D12263874003E015B /* shell_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D229FF12263873003E015B /* shell_icon.png */; };
+		F0D22A0E12263874003E015B /* shell1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D22A0012263873003E015B /* shell1.png */; };
+		F0D22A1012263874003E015B /* wolfIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0D22A0212263874003E015B /* wolfIcon.jpg */; };
+		F0D5835E123E765100BF7955 /* laserBeam2.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D5835D123E765100BF7955 /* laserBeam2.png */; };
+		F0D583BC123E77D500BF7955 /* Explosions.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D583BB123E77D500BF7955 /* Explosions.m */; };
+		F0DC780B1238B75C00172BDA /* mainMenuBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0DC780A1238B75C00172BDA /* mainMenuBG.jpg */; };
+		F0EFE6C81237A1B100B34891 /* nukerPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = F0EFE6C71237A1B100B34891 /* nukerPlane.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* tankPrototype_3AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tankPrototype_3AppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* tankPrototype_3AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tankPrototype_3AppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* tankPrototype_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tankPrototype_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28C3AD890F43EF2300507BA6 /* tankPrototype_3.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = tankPrototype_3.xcdatamodel; sourceTree = "<group>"; };
+		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* tankPrototype_3_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tankPrototype_3_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* tankPrototype_3-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tankPrototype_3-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		F0248E2C123F1694005ECF75 /* Sounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sounds.h; sourceTree = "<group>"; };
+		F0248E2D123F1694005ECF75 /* Sounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sounds.m; sourceTree = "<group>"; };
+		F0248EEE123F252A005ECF75 /* laserNoise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laserNoise.wav; sourceTree = "<group>"; };
+		F0248F24123F2589005ECF75 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F0272CB7123DF337004CC775 /* explosion1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explosion1-1.png"; sourceTree = "<group>"; };
+		F0272CB8123DF337004CC775 /* explosion1-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explosion1-2.png"; sourceTree = "<group>"; };
+		F0272CB9123DF337004CC775 /* explosion1-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explosion1-3.png"; sourceTree = "<group>"; };
+		F0272CBA123DF337004CC775 /* explosion1-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explosion1-4.png"; sourceTree = "<group>"; };
+		F02BF25C122E5F5800A04E46 /* DefineAllConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineAllConstants.h; sourceTree = "<group>"; };
+		F02BF25D122E5F5800A04E46 /* DefineAllConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefineAllConstants.m; sourceTree = "<group>"; };
+		F02BF29C122E619C00A04E46 /* playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtn.png; sourceTree = "<group>"; };
+		F03B04EA1225E89B0073A340 /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
+		F03B04EB1225E89B0073A340 /* Weapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weapon.m; sourceTree = "<group>"; };
+		F03B04ED1225E8AB0073A340 /* UserTank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTank.h; sourceTree = "<group>"; };
+		F03B04EE1225E8AB0073A340 /* UserTank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTank.m; sourceTree = "<group>"; };
+		F049E971122678D4006DB0AB /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		F049E972122678D4006DB0AB /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		F049E973122678D4006DB0AB /* MainMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainMenuViewController.xib; path = Classes/MainMenuViewController.xib; sourceTree = "<group>"; };
+		F049E976122678E2006DB0AB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		F049E977122678E2006DB0AB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		F049E978122678E2006DB0AB /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = Classes/SettingsViewController.xib; sourceTree = "<group>"; };
+		F049E97B122678EE006DB0AB /* GamePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayViewController.h; sourceTree = "<group>"; };
+		F049E97C122678EE006DB0AB /* GamePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayViewController.m; sourceTree = "<group>"; };
+		F049E97D122678EE006DB0AB /* GamePlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GamePlayViewController.xib; path = Classes/GamePlayViewController.xib; sourceTree = "<group>"; };
+		F08E24541227E243004DFD3E /* cancelBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelBtn.png; sourceTree = "<group>"; };
+		F08F9167122772D900A415A0 /* buttonBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBG.png; sourceTree = "<group>"; };
+		F08F91831227792D00A415A0 /* HiScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiScoresViewController.h; sourceTree = "<group>"; };
+		F08F91841227792D00A415A0 /* HiScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiScoresViewController.m; sourceTree = "<group>"; };
+		F08F91851227792D00A415A0 /* HiScoresViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HiScoresViewController.xib; path = Classes/HiScoresViewController.xib; sourceTree = "<group>"; };
+		F08F91881227794700A415A0 /* HowToPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToPlayViewController.h; sourceTree = "<group>"; };
+		F08F91891227794700A415A0 /* HowToPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToPlayViewController.m; sourceTree = "<group>"; };
+		F08F918A1227794700A415A0 /* HowToPlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HowToPlayViewController.xib; path = Classes/HowToPlayViewController.xib; sourceTree = "<group>"; };
+		F08F91A91227857200A415A0 /* GameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
+		F08F91AA1227857200A415A0 /* GameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameEngine.m; sourceTree = "<group>"; };
+		F08F91AC1227858B00A415A0 /* EnemyTank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyTank.h; sourceTree = "<group>"; };
+		F08F91AD1227858B00A415A0 /* EnemyTank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyTank.m; sourceTree = "<group>"; };
+		F08F91DC122786F200A415A0 /* pauseBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseBtn.png; sourceTree = "<group>"; };
+		F09A4AD11238B9BD00E9A2A0 /* emptyTerrain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = emptyTerrain.jpg; sourceTree = "<group>"; };
+		F09A4AD21238B9BD00E9A2A0 /* terrain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = terrain.jpg; sourceTree = "<group>"; };
+		F0D229F612263873003E015B /* bullet1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet1.png; sourceTree = "<group>"; };
+		F0D229F812263873003E015B /* enemyTank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyTank1.png; sourceTree = "<group>"; };
+		F0D229F912263873003E015B /* laser_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser_icon.png; sourceTree = "<group>"; };
+		F0D229FA12263873003E015B /* nuke_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nuke_icon.png; sourceTree = "<group>"; };
+		F0D229FB12263873003E015B /* playerTank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerTank.png; sourceTree = "<group>"; };
+		F0D229FC12263873003E015B /* rightSideStrip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightSideStrip.png; sourceTree = "<group>"; };
+		F0D229FD12263873003E015B /* rocket_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocket_icon.png; sourceTree = "<group>"; };
+		F0D229FE12263873003E015B /* rocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocket.png; sourceTree = "<group>"; };
+		F0D229FF12263873003E015B /* shell_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shell_icon.png; sourceTree = "<group>"; };
+		F0D22A0012263873003E015B /* shell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shell1.png; sourceTree = "<group>"; };
+		F0D22A0212263874003E015B /* wolfIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wolfIcon.jpg; sourceTree = "<group>"; };
+		F0D5835D123E765100BF7955 /* laserBeam2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laserBeam2.png; sourceTree = "<group>"; };
+		F0D583BA123E77D500BF7955 /* Explosions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosions.h; sourceTree = "<group>"; };
+		F0D583BB123E77D500BF7955 /* Explosions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Explosions.m; sourceTree = "<group>"; };
+		F0DC780A1238B75C00172BDA /* mainMenuBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mainMenuBG.jpg; sourceTree = "<group>"; };
+		F0EFE6C71237A1B100B34891 /* nukerPlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nukerPlane.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
+				F0248F25123F2589005ECF75 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* tankPrototype_3AppDelegate.h */,
+				1D3623250D0F684500981E51 /* tankPrototype_3AppDelegate.m */,
+				F011D9A6123E6CCB000CCCB1 /* App Settings */,
+				F011D9A5123E6CB2000CCCB1 /* View Controllers */,
+				F011D9A7123E6CE0000CCCB1 /* Game Files */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* tankPrototype_3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* tankPrototype_3_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F0248E67123F17F0005ECF75 /* Sounds */,
+				F0272D01123DF46F004CC775 /* Explosions */,
+				F0272D02123DF4A8004CC775 /* players */,
+				F0272CC1123DF355004CC775 /* Weapons */,
+				F0272CC4123DF3A6004CC775 /* Interface items */,
+				2819305F112F816700ECF9B4 /* tankPrototype_3.xcdatamodeld */,
+				8D1107310486CEB800E47090 /* tankPrototype_3-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				28D801B30F44B63D00FB423F /* CoreData.framework */,
+				F0248F24123F2589005ECF75 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F011D9A5123E6CB2000CCCB1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F049E971122678D4006DB0AB /* MainMenuViewController.h */,
+				F049E972122678D4006DB0AB /* MainMenuViewController.m */,
+				F049E976122678E2006DB0AB /* SettingsViewController.h */,
+				F049E977122678E2006DB0AB /* SettingsViewController.m */,
+				F08F91831227792D00A415A0 /* HiScoresViewController.h */,
+				F08F91841227792D00A415A0 /* HiScoresViewController.m */,
+				F049E97B122678EE006DB0AB /* GamePlayViewController.h */,
+				F049E97C122678EE006DB0AB /* GamePlayViewController.m */,
+				F08F91881227794700A415A0 /* HowToPlayViewController.h */,
+				F08F91891227794700A415A0 /* HowToPlayViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F011D9A6123E6CCB000CCCB1 /* App Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F02BF25C122E5F5800A04E46 /* DefineAllConstants.h */,
+				F02BF25D122E5F5800A04E46 /* DefineAllConstants.m */,
+			);
+			name = "App Settings";
+			sourceTree = "<group>";
+		};
+		F011D9A7123E6CE0000CCCB1 /* Game Files */ = {
+			isa = PBXGroup;
+			children = (
+				F08F91AC1227858B00A415A0 /* EnemyTank.h */,
+				F08F91AD1227858B00A415A0 /* EnemyTank.m */,
+				F0D583BA123E77D500BF7955 /* Explosions.h */,
+				F0D583BB123E77D500BF7955 /* Explosions.m */,
+				F08F91A91227857200A415A0 /* GameEngine.h */,
+				F08F91AA1227857200A415A0 /* GameEngine.m */,
+				F03B04ED1225E8AB0073A340 /* UserTank.h */,
+				F03B04EE1225E8AB0073A340 /* UserTank.m */,
+				F0248E2C123F1694005ECF75 /* Sounds.h */,
+				F0248E2D123F1694005ECF75 /* Sounds.m */,
+				F03B04EA1225E89B0073A340 /* Weapon.h */,
+				F03B04EB1225E89B0073A340 /* Weapon.m */,
+			);
+			name = "Game Files";
+			sourceTree = "<group>";
+		};
+		F0248E67123F17F0005ECF75 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F0248EEE123F252A005ECF75 /* laserNoise.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		F0272CC0123DF33E004CC775 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				F08F918A1227794700A415A0 /* HowToPlayViewController.xib */,
+				F08F91851227792D00A415A0 /* HiScoresViewController.xib */,
+				F049E97D122678EE006DB0AB /* GamePlayViewController.xib */,
+				F049E978122678E2006DB0AB /* SettingsViewController.xib */,
+				F049E973122678D4006DB0AB /* MainMenuViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+			);
+			name = Nibs;
+			sourceTree = "<group>";
+		};
+		F0272CC1123DF355004CC775 /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				F0D229F612263873003E015B /* bullet1.png */,
+				F0EFE6C71237A1B100B34891 /* nukerPlane.png */,
+				F0D22A0012263873003E015B /* shell1.png */,
+				F0D229FE12263873003E015B /* rocket.png */,
+				F0D5835D123E765100BF7955 /* laserBeam2.png */,
+			);
+			name = Weapons;
+			sourceTree = "<group>";
+		};
+		F0272CC4123DF3A6004CC775 /* Interface items */ = {
+			isa = PBXGroup;
+			children = (
+				F0272CC0123DF33E004CC775 /* Nibs */,
+				F0272CE1123DF3EA004CC775 /* graphics */,
+			);
+			name = "Interface items";
+			sourceTree = "<group>";
+		};
+		F0272CE1123DF3EA004CC775 /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				F02BF29C122E619C00A04E46 /* playBtn.png */,
+				F08F9167122772D900A415A0 /* buttonBG.png */,
+				F08E24541227E243004DFD3E /* cancelBtn.png */,
+				F0D229FC12263873003E015B /* rightSideStrip.png */,
+				F0D229FF12263873003E015B /* shell_icon.png */,
+				F09A4AD11238B9BD00E9A2A0 /* emptyTerrain.jpg */,
+				F0D229FD12263873003E015B /* rocket_icon.png */,
+				F0DC780A1238B75C00172BDA /* mainMenuBG.jpg */,
+				F0D229FA12263873003E015B /* nuke_icon.png */,
+				F0D229F912263873003E015B /* laser_icon.png */,
+				F08F91DC122786F200A415A0 /* pauseBtn.png */,
+				F0D22A0212263874003E015B /* wolfIcon.jpg */,
+				F09A4AD21238B9BD00E9A2A0 /* terrain.jpg */,
+			);
+			name = graphics;
+			sourceTree = "<group>";
+		};
+		F0272D01123DF46F004CC775 /* Explosions */ = {
+			isa = PBXGroup;
+			children = (
+				F0272CB8123DF337004CC775 /* explosion1-2.png */,
+				F0272CB9123DF337004CC775 /* explosion1-3.png */,
+				F0272CBA123DF337004CC775 /* explosion1-4.png */,
+				F0272CB7123DF337004CC775 /* explosion1-1.png */,
+			);
+			name = Explosions;
+			sourceTree = "<group>";
+		};
+		F0272D02123DF4A8004CC775 /* players */ = {
+			isa = PBXGroup;
+			children = (
+				F0D229FB12263873003E015B /* playerTank.png */,
+				F0D229F812263873003E015B /* enemyTank1.png */,
+			);
+			name = players;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* tankPrototype_3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "tankPrototype_3" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tankPrototype_3;
+			productName = tankPrototype_3;
+			productReference = 1D6058910D05DD3D006BFB54 /* tankPrototype_3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "tankPrototype_3" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* tankPrototype_3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				F0D22A0412263874003E015B /* bullet1.png in Resources */,
+				F0D22A0612263874003E015B /* enemyTank1.png in Resources */,
+				F0D22A0712263874003E015B /* laser_icon.png in Resources */,
+				F0D22A0812263874003E015B /* nuke_icon.png in Resources */,
+				F0D22A0912263874003E015B /* playerTank.png in Resources */,
+				F0D22A0A12263874003E015B /* rightSideStrip.png in Resources */,
+				F0D22A0B12263874003E015B /* rocket_icon.png in Resources */,
+				F0D22A0C12263874003E015B /* rocket.png in Resources */,
+				F0D22A0D12263874003E015B /* shell_icon.png in Resources */,
+				F0D22A0E12263874003E015B /* shell1.png in Resources */,
+				F0D22A1012263874003E015B /* wolfIcon.jpg in Resources */,
+				F049E975122678D4006DB0AB /* MainMenuViewController.xib in Resources */,
+				F049E97A122678E2006DB0AB /* SettingsViewController.xib in Resources */,
+				F049E97F122678EE006DB0AB /* GamePlayViewController.xib in Resources */,
+				F08F9168122772D900A415A0 /* buttonBG.png in Resources */,
+				F08F91871227792D00A415A0 /* HiScoresViewController.xib in Resources */,
+				F08F918C1227794700A415A0 /* HowToPlayViewController.xib in Resources */,
+				F08F91DD122786F200A415A0 /* pauseBtn.png in Resources */,
+				F08E24551227E243004DFD3E /* cancelBtn.png in Resources */,
+				F02BF29D122E619C00A04E46 /* playBtn.png in Resources */,
+				F0EFE6C81237A1B100B34891 /* nukerPlane.png in Resources */,
+				F0DC780B1238B75C00172BDA /* mainMenuBG.jpg in Resources */,
+				F09A4AD31238B9BD00E9A2A0 /* emptyTerrain.jpg in Resources */,
+				F09A4AD41238B9BD00E9A2A0 /* terrain.jpg in Resources */,
+				F0D5835E123E765100BF7955 /* laserBeam2.png in Resources */,
+				F0272CBB123DF337004CC775 /* explosion1-1.png in Resources */,
+				F0272CBC123DF337004CC775 /* explosion1-2.png in Resources */,
+				F0272CBD123DF337004CC775 /* explosion1-3.png in Resources */,
+				F0272CBE123DF337004CC775 /* explosion1-4.png in Resources */,
+				F0248EEF123F252A005ECF75 /* laserNoise.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* tankPrototype_3AppDelegate.m in Sources */,
+				28193060112F816700ECF9B4 /* tankPrototype_3.xcdatamodeld in Sources */,
+				F03B04EC1225E89B0073A340 /* Weapon.m in Sources */,
+				F03B04EF1225E8AB0073A340 /* UserTank.m in Sources */,
+				F049E974122678D4006DB0AB /* MainMenuViewController.m in Sources */,
+				F049E979122678E2006DB0AB /* SettingsViewController.m in Sources */,
+				F049E97E122678EE006DB0AB /* GamePlayViewController.m in Sources */,
+				F08F91861227792D00A415A0 /* HiScoresViewController.m in Sources */,
+				F08F918B1227794700A415A0 /* HowToPlayViewController.m in Sources */,
+				F08F91AB1227857200A415A0 /* GameEngine.m in Sources */,
+				F08F91AE1227858B00A415A0 /* EnemyTank.m in Sources */,
+				F02BF25E122E5F5800A04E46 /* DefineAllConstants.m in Sources */,
+				F0D583BC123E77D500BF7955 /* Explosions.m in Sources */,
+				F0248E2E123F1694005ECF75 /* Sounds.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = tankPrototype_3_Prefix.pch;
+				INFOPLIST_FILE = "tankPrototype_3-Info.plist";
+				PRODUCT_NAME = tankPrototype_3;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = tankPrototype_3_Prefix.pch;
+				INFOPLIST_FILE = "tankPrototype_3-Info.plist";
+				PRODUCT_NAME = tankPrototype_3;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Manford (D6LK57B89R)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "C483B147-61F1-4CDC-ADDF-0B7509665577";
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Manford (D6LK57B89R)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "C483B147-61F1-4CDC-ADDF-0B7509665577";
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "tankPrototype_3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "tankPrototype_3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2819305F112F816700ECF9B4 /* tankPrototype_3.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				28C3AD890F43EF2300507BA6 /* tankPrototype_3.xcdatamodel */,
+			);
+			currentVersion = 28C3AD890F43EF2300507BA6 /* tankPrototype_3.xcdatamodel */;
+			path = tankPrototype_3.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
