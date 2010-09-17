@@ -37,6 +37,7 @@
 -(void)updateScene;
 -(void)togglePause;
 
+-(void)changeWeapon:(id)weaponToChangeTo;
 -(void)removeUnrequiredBulletsFromScene;
 -(void)updateBulletsOnScene;
 

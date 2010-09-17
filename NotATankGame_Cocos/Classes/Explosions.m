@@ -41,12 +41,13 @@ toRemove, hasSubView, iterationsSurvived, iterationsForExplosionToSurvive, image
 
 -(void)dealloc
 {
-	[super dealloc];
+
 //	[image1 release];
 //	[image2 release];
 //	[image3 release];
 //	[image4 release];
 	[imageArray release];
+	[super dealloc];
 }
 
 @end

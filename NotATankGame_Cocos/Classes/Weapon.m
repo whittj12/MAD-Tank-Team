@@ -13,6 +13,9 @@
 @synthesize weaponID,weaponLocation, damage, damageRadius, image1, image2, 
 hasSubView,fired, toRemove, bulletVelocity, imageSize;
 
+/*
+ By default, weapon is initialised as a machinegun
+ */
 -(id)init
 {
 	[super init];
@@ -25,11 +28,9 @@ hasSubView,fired, toRemove, bulletVelocity, imageSize;
 	self.weaponLocation = CGPointMake(40, 70);
 	
 	self.imageSize = CGPointMake(15, 4);
-	
-//	self.image1 = [UIImage imageNamed:@"bullet1.png"];
-//	self.image2 = [UIImage imageNamed:@"shell1.png"];
-	image1 = [NSString stringWithFormat:@"bullet1.png"];
-	image2 = [NSString stringWithFormat:@"shell1.png"];
+
+	self.image1 = [NSString stringWithFormat:@"bullet1.png"];
+	self.image2 = nil;
 	
 	self.fired = NO;
 	self.toRemove = NO;
@@ -39,6 +40,41 @@ hasSubView,fired, toRemove, bulletVelocity, imageSize;
 	
 	return self;
 }
+
+
+-(void)setupWeaponToNuke
+{
+	self.damage = 100;
+	self.damageRadius = 50;
+	self.imageSize = CGPointMake(100, 60);
+	self.image1 = [NSString stringWithFormat:@"nukerPlane.png"];
+	self.bulletVelocity = CGPointMake(-5, -3.5); 
+	/*
+	 find out a good formula to use for y speed to make it travel 
+	 perfect diagonal using kScreenHeight and kScreenWidth
+	 probably can use pythagoras theory for diagonal like vector here
+	 */
+	self.weaponLocation = CGPointMake(kScreenWidthPixels-80, kScreenHeightPixels);
+}
+
+-(void)setupWeaponToRocket
+{
+	self.damage = 50;
+	self.damageRadius = 50;
+	self.imageSize = CGPointMake(55, 19);
+	self.image1 = [NSString stringWithFormat:@"rocket.png"];
+	self.bulletVelocity = CGPointMake(10, 0);
+}
+
+-(void)setupWeaponToLaserGun
+{
+	self.damage = 30;
+	self.damageRadius = 50;
+	self.imageSize = CGPointMake(53, 5);
+	self.image1 = [NSString stringWithFormat:@"laserBeam2.png"];
+	self.bulletVelocity = CGPointMake(35, 0);
+}
+
 
 /*
  Move the bullets location forward by amount defined in CGPoint bulletVelocity
@@ -70,12 +106,13 @@ hasSubView,fired, toRemove, bulletVelocity, imageSize;
 
 }
 
+
 -(void)dealloc
 {
-	[super dealloc];
-	
 	[image1 release];
 	[image2 release];
+	
+	[super dealloc];
 }
 @end
 

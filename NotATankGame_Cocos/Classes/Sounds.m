@@ -41,8 +41,7 @@
 
 -(void)dealloc
 {
-	[super dealloc];
-	
 	[soundUrl release];
+	[super dealloc];
 }
 @end

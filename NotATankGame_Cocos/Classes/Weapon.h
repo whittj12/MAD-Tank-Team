@@ -16,8 +16,6 @@
 	CGPoint bulletVelocity;
 	int damage;
 	int damageRadius;
-//	UIImage * image1;
-//	UIImage * image2;
 	bool fired;
 	bool toRemove;
 	bool hasSubView;
@@ -43,5 +41,9 @@
 
 -(void)moveBulletByVelocity;
 -(bool)checkIfBulletIsOutOfBounds;
+
+-(void)setupWeaponToNuke;
+-(void)setupWeaponToRocket;
+-(void)setupWeaponToLaserGun;
 
 @end

@@ -63,10 +63,9 @@ damage, damageRadius, health, isNew, toRemove, hasSubView;
 
 
 -(void)dealloc
-{
-	[super dealloc];
-	
+{	
 	[image1 release];
+	[super dealloc];
 }
 
 @end

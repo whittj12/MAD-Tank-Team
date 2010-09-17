@@ -30,7 +30,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	player1 = [[UserTank alloc] init];
 	//player1TankImage = player1.image1;
 	
-	
 	explosionsPool = [[NSMutableArray alloc] initWithCapacity:kMaxEnemiesAllowedOnScreen];
 	tempExplosionsPool = [[NSMutableArray alloc] initWithCapacity:kMaxEnemiesAllowedOnScreen];
 	explosionsToRemoveFromView = [[NSMutableArray alloc] initWithCapacity:kMaxEnemiesAllowedOnScreen];
@@ -48,9 +47,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	
 	//for special weapons
 	
-	
-	
-	
 	//for autofire machinegun bullets
 	tempBulletPool = [[NSMutableArray alloc] initWithCapacity:kMaxBulletsAllowed];
 	bulletsToRemoveFromView = [[NSMutableArray alloc] initWithCapacity:kMaxBulletsAllowed];
@@ -62,7 +58,7 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	howOftenToAddEnemies = 0;
 	
 	
-	laserSound = [[Sounds alloc]init];
+	//laserSound = [[Sounds alloc]init];
 	
 	
 	return self;
@@ -84,14 +80,17 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 -(void)createNewNuke
 {
 	nuke = [[Weapon alloc] init];
-	nuke.damage = 100;
-	nuke.damageRadius = 50;
-	nuke.imageSize = CGPointMake(100, 60);
-	nuke.image1 = [NSString stringWithFormat:@"nukerPlane.png"];
-	nuke.bulletVelocity = CGPointMake(-5, -3.5); //find out a good formula to use for y speed to make it travel 
-											//perfect diagonal using kScreenHeight and kScreenWidth
-											//probably can use pythagoras theory for diagonal like vector here
-	nuke.weaponLocation = CGPointMake(kScreenWidthPixels-80, kScreenHeightPixels);
+	[nuke setupWeaponToNuke];
+	//nuke.damage = 100;
+//	nuke.damageRadius = 50;
+//	nuke.imageSize = CGPointMake(100, 60);
+//	NSString * tempString = [NSString stringWithFormat:@"nukerPlane.png"];
+//	nuke.image1 = tempString;
+//	[tempString release];
+//	nuke.bulletVelocity = CGPointMake(-5, -3.5); //find out a good formula to use for y speed to make it travel 
+//											//perfect diagonal using kScreenHeight and kScreenWidth
+//											//probably can use pythagoras theory for diagonal like vector here
+//	nuke.weaponLocation = CGPointMake(kScreenWidthPixels-80, kScreenHeightPixels);
 }
 
 /*
@@ -101,12 +100,15 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 -(void)createNewRocket
 {
 	rocket = [[Weapon alloc] init];
-	rocket.damage = 50;
-	rocket.damageRadius = 50;
-	rocket.imageSize = CGPointMake(55, 19);
-	//rocket.image1 = [UIImage imageNamed:@"rocket.png"];
-	rocket.image1 = [NSString stringWithFormat:@"rocket.png"];
-	rocket.bulletVelocity = CGPointMake(10, 0);
+	[rocket setupWeaponToRocket];
+//	rocket.damage = 50;
+//	rocket.damageRadius = 50;
+//	rocket.imageSize = CGPointMake(55, 19);
+//	//rocket.image1 = [UIImage imageNamed:@"rocket.png"];
+//	NSString * tempString = [NSString stringWithFormat:@"rocket.png"];
+//	rocket.image1 = tempString;
+//	[tempString release];
+//	rocket.bulletVelocity = CGPointMake(10, 0);
 }
 
 /*
@@ -116,12 +118,15 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 -(void)createNewLaser
 {
 	laser = [[Weapon alloc] init];
-	laser.damage = 30;
-	laser.damageRadius = 50;
-	laser.imageSize = CGPointMake(53, 10);
-	//laser.imageSize = CGPointMake(480, 10);
-	laser.image1 = [NSString stringWithFormat:@"laserBeam2.png"];
-	laser.bulletVelocity = CGPointMake(35, 0);
+	[laser setupWeaponToLaserGun];
+//	laser.damage = 30;
+//	laser.damageRadius = 50;
+//	laser.imageSize = CGPointMake(53, 10);
+//	//laser.imageSize = CGPointMake(480, 10);
+//	NSString * tempString = [NSString stringWithFormat:@"laserBeam2.png"];
+//	laser.image1 = tempString;
+//	[tempString release];
+//	laser.bulletVelocity = CGPointMake(35, 0);
 }
 
 /*
@@ -173,8 +178,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 				 */
 				
 				//[laserSound playSound];
-				
-				
 				
 				howOftenToAddBullets = 0;
 			}
@@ -756,18 +759,25 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	 */
 	if(thereIsSomeBulletToRemove)
 	{
-		[tempBulletPool removeAllObjects];
+		//[tempBulletPool removeAllObjects];
 	
 		for(Weapon * bullets in bulletsPool)
 		{
-			if(!bullets.toRemove)
+//			if(!bullets.toRemove)
+//			{
+//				[tempBulletPool addObject:bullets];
+//			}
+			if(bullets.toRemove)
 			{
 				[tempBulletPool addObject:bullets];
 			}
 		}
 
-		[bulletsPool removeAllObjects];
-		[bulletsPool addObjectsFromArray:tempBulletPool];
+		//[bulletsPool removeAllObjects];
+		[bulletsPool removeObjectsInArray:tempBulletPool];
+
+		//[tempBulletPool removeAllObjects];
+	//	[bulletsPool addObjectsFromArray:tempBulletPool];
 		
 	}	
 }
@@ -872,7 +882,7 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 
 -(void)dealloc
 {
-	[super dealloc];
+	
 	//[player1TankImage release];
 	
 	[enemyPool release];
@@ -890,6 +900,8 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	[explosionsToRemoveFromView release];
 	
 	[laserSound release];
+	
+	[super dealloc];
 }
 
 @end

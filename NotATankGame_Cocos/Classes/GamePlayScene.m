@@ -111,18 +111,19 @@
 		//[theGameEngine incrementGameScore];
 		[self updateBulletsOnScene];
 		[self removeUnrequiredBulletsFromScene];
-		
-		
 	}
 }
 
 -(void)removeUnrequiredBulletsFromScene
 {
-	for(NSNumber * bulletID in [theGameEngine bulletsToRemoveFromView])
+	if([theGameEngine thereIsSomeBulletToRemove])
 	{
-		[self removeChild:[self getChildByTag:[bulletID intValue]] cleanup:YES];
+		for(NSNumber * bulletID in [theGameEngine bulletsToRemoveFromView])
+		{
+			[self removeChild:[self getChildByTag:[bulletID intValue]] cleanup:YES];
+		}
+		[theGameEngine clearBulletsToRemoveFromViewArray];
 	}
-	[theGameEngine clearBulletsToRemoveFromViewArray];
 }
 
 -(void)updateBulletsOnScene
@@ -141,7 +142,7 @@
 		else
 		{
 			//tempSprite = [CCSprite spriteWithFile:bullet.image1];
-			tempSprite = [CCSprite spriteWithFile:@"bullet1.png"];
+			tempSprite = [CCSprite spriteWithFile:bullet.image1];
 			//tempSprite.position = ccp(arc4random() %480, arc4random() %320);
 			
 			[tempSprite setPosition:bullet.weaponLocation];
@@ -180,36 +181,40 @@
 	
 	//laser button
 	CCMenuItemImage * laserButton = [CCMenuItemImage itemFromNormalImage:@"laser_icon.png" 
-														  selectedImage:@"laser_icon.png"
+														  selectedImage:@"shell_icon.png"
 																 target:self
-															   selector:@selector(togglePause)];
+															   selector:@selector(changeWeapon:)];
 	btnY = 150 - gap - btnWidth;
+	laserButton.tag=-30;
 	laserButton.position = ccp(btnX, btnY);
 	
 	
 	
 	//pencil/shell/whateveritis button
 	CCMenuItemImage * shellButton = [CCMenuItemImage itemFromNormalImage:@"shell_icon.png" 
-														   selectedImage:@"shell_icon.png"
+														   selectedImage:@"laser_icon.png"
 																  target:self
-																selector:@selector(togglePause)];
+																selector:@selector(changeWeapon:)];
+	shellButton.tag = -31;
 	btnY = btnY - gap - btnWidth;
 	shellButton.position = ccp(btnX, btnY);
 	
 	//rocket button
 	CCMenuItemImage * rocketButton = [CCMenuItemImage itemFromNormalImage:@"rocket_icon.png" 
-														   selectedImage:@"rocket_icon.png"
+														   selectedImage:@"nuke_icon.png"
 																  target:self
-																selector:@selector(togglePause)];
+																selector:@selector(changeWeapon:)];
 	btnY = btnY - gap - btnWidth;
+	rocketButton.tag = -32;
 	rocketButton.position = ccp(btnX, btnY);
 	
 	//nuke button
 	CCMenuItemImage * nukeButton = [CCMenuItemImage itemFromNormalImage:@"nuke_icon.png" 
-														   selectedImage:@"nuke_icon.png"
+														   selectedImage:@"rocket_icon.png"
 																  target:self
-																selector:@selector(togglePause)];
+																selector:@selector(changeWeapon:)];
 	btnY = btnY - gap - btnWidth;
+	nukeButton.tag=-33;
 	nukeButton.position = ccp(btnX, btnY);
 	
 	
@@ -234,7 +239,31 @@
 	 so probably use that for score/health display
 	 */ 
 }
-					
+				
+-(void)changeWeapon:(id)weaponToChangeTo
+{
+	switch ([weaponToChangeTo tag]) {
+		case -30:
+			[theGameEngine changeCurrentlySelectedWeapon:kLasergun];
+			break;
+
+		case -31:
+			[theGameEngine changeCurrentlySelectedWeapon:kMachinegun];
+			break;
+			
+		case -32:
+			[theGameEngine changeCurrentlySelectedWeapon:kRocketlauncher];
+			break;
+			
+		case -33:
+			[theGameEngine changeCurrentlySelectedWeapon:kNuke];
+			break;
+			
+		default:
+			break;
+	}
+}
+
 -(void)togglePause
 {
 	
@@ -259,7 +288,8 @@
 {
 	//[NotATankGame_CocosAppDelegate replaceToScene:kMainMenuScene];
 	[theGameEngine pauseGame];
-	[[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
+	//[[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
+	[[CCDirector sharedDirector] replaceScene:[CCShrinkGrowTransition transitionWithDuration:0.5f scene:[MainMenuScene scene]]];
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -270,9 +300,13 @@
 	// cocos2d will automatically release all the children (Label)
 	
 	// don't forget to call "super dealloc"
-	[super dealloc];
+	
 	
 	CCLOG(@"dealloc: %@", self);
+	
+	//[theGameEngine release];
+	
+	[super dealloc];
 }
 
 @end

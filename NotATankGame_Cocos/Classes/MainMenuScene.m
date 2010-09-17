@@ -76,7 +76,9 @@
 -(void)replaceToGameScene
 {
 	//[NotATankGame_CocosAppDelegate replaceToScene:kGamePlayScene];
-	[[CCDirector sharedDirector] replaceScene:[GamePlayScene scene]];
+	//[[CCDirector sharedDirector] replaceScene:[GamePlayScene scene]];
+//	[[CCDirector sharedDirector] replaceScene:[CCFadeTransition transitionWithDuration:0.5f scene:[GamePlayScene scene]]];
+	[[CCDirector sharedDirector] replaceScene:[CCMoveInBTransition transitionWithDuration:0.5f scene:[GamePlayScene scene]]];
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -87,10 +89,8 @@
 	// cocos2d will automatically release all the children (Label)
 	
 	// don't forget to call "super dealloc"
-	[super dealloc];
-	
-	
 	CCLOG(@"dealloc: %@", self);
+	[super dealloc];
 }
 
 

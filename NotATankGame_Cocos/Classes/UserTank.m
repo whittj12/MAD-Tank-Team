@@ -26,10 +26,10 @@
 }
 
 
--(void)dealloc{
-	[super dealloc];
-	
+-(void)dealloc
+{	
 	[image1 release];
+	[super dealloc];
 }
 
 @end
