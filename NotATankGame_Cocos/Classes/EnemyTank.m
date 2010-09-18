@@ -19,7 +19,7 @@ damage, damageRadius, health, isNew, toRemove, hasSubView;
 	
 	self.enemyID = 0;
 	self.enemyLocation = CGPointMake(kEnemySpawnPointX, 70);
-	self.imageSize = CGPointMake(49/kEnemyTankImageReductionScaleFactor, 59/kEnemyTankImageReductionScaleFactor);
+	self.imageSize = CGPointMake(49, 59);
 
 	//randomly determine each enemytanks x velocity
 	double randomN = arc4random() % kEnemyTankXVelocityRandomMax;
@@ -32,7 +32,7 @@ damage, damageRadius, health, isNew, toRemove, hasSubView;
 	self.hasSubView = NO;
 	
 	//self.image1 = [UIImage imageNamed:@"enemyTank1.png"];
-	image1 = [NSString stringWithFormat:@"enemyTank1.png"];
+	self.image1 = [NSString stringWithFormat:@"enemyTank1.png"];
 	return self;
 }
 

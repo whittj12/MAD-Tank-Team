@@ -110,7 +110,10 @@
 	{
 		//[theGameEngine incrementGameScore];
 		[self updateBulletsOnScene];
+		[self updateEnemiesOnScene];
+		
 		[self removeUnrequiredBulletsFromScene];
+		[self removeUnrequiredEnemiesFromScene];
 	}
 }
 
@@ -239,7 +242,43 @@
 	 so probably use that for score/health display
 	 */ 
 }
-				
+
+
+-(void)updateEnemiesOnScene
+{
+	CCSprite * tempSprite;
+	for(EnemyTank * enemy in [theGameEngine enemyPool])
+	{
+		if(enemy.hasSubView)
+		{
+			[[self getChildByTag:enemy.enemyID] setPosition:enemy.enemyLocation];
+		}
+		else
+		{
+			tempSprite = [CCSprite spriteWithFile:enemy.image1];
+			[tempSprite setPosition:enemy.enemyLocation];
+			tempSprite.tag = enemy.enemyID;
+			
+			[self addChild:tempSprite];
+			
+			[enemy setHasSubView:YES];
+		}
+	}
+}
+
+-(void)removeUnrequiredEnemiesFromScene
+{
+	if([theGameEngine thereIsSomeEnemyToRemove])
+	{
+		for(NSNumber * enemyID in [theGameEngine enemiesToRemoveFromView])
+		{
+			[self removeChild:[self getChildByTag:[enemyID intValue]] cleanup:YES];
+		}
+		[theGameEngine clearEnemiesToRemoveFromViewArray];
+	}
+}
+
+
 -(void)changeWeapon:(id)weaponToChangeTo
 {
 	switch ([weaponToChangeTo tag]) {
@@ -286,9 +325,7 @@
 }
 -(void)replaceToMainMenuScene
 {
-	//[NotATankGame_CocosAppDelegate replaceToScene:kMainMenuScene];
 	[theGameEngine pauseGame];
-	//[[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
 	[[CCDirector sharedDirector] replaceScene:[CCShrinkGrowTransition transitionWithDuration:0.5f scene:[MainMenuScene scene]]];
 }
 
@@ -304,7 +341,7 @@
 	
 	CCLOG(@"dealloc: %@", self);
 	
-	NSLog(@"the game engine retain count %i", [theGameEngine retainCount]);
+	//NSLog(@"the game engine retain count %i", [theGameEngine retainCount]);
 	[theGameEngine release];
 	
 	[super dealloc];

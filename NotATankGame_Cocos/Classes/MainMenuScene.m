@@ -75,9 +75,6 @@
 
 -(void)replaceToGameScene
 {
-	//[NotATankGame_CocosAppDelegate replaceToScene:kGamePlayScene];
-	//[[CCDirector sharedDirector] replaceScene:[GamePlayScene scene]];
-//	[[CCDirector sharedDirector] replaceScene:[CCFadeTransition transitionWithDuration:0.5f scene:[GamePlayScene scene]]];
 	[[CCDirector sharedDirector] replaceScene:[CCShrinkGrowTransition transitionWithDuration:0.5f scene:[GamePlayScene scene]]];
 }
 

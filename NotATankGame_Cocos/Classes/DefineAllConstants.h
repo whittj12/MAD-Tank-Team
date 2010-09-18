@@ -70,6 +70,10 @@
 /*
  These are probably not necessary to have here, just constants used to determine how much 
  smaller compared to its original size the image will be (image.size.x / k___ImageReductionScaleFactor)
+ 
+ ** 18/09/10 - Figured this is not a really good idea (since we will eventually implement
+ a whole bunch of more enemies and player tank images as well as different explosions and all,
+ Those images will now be made to the exact size that we want which is probably the better way to do it anyway. 
 */
 #define kPlayerTankImageReductionScaleFactor 1.3
 #define kEnemyTankImageReductionScaleFactor 2

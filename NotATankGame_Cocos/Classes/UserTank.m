@@ -17,10 +17,10 @@
 {
 	[super init];
 	//self.image = [UIImage imageNamed:@"playerTank.png"];
-	image1 = [NSString stringWithFormat:@"playerTank.png"];
+	self.image1 = [NSString stringWithFormat:@"playerTank.png"];
 	self.health = 400;
 	self.tankLocation = CGPointMake(40, 70);
-	self.tankImgSize = CGPointMake(49/kPlayerTankImageReductionScaleFactor, 59/kPlayerTankImageReductionScaleFactor);
+	self.tankImgSize = CGPointMake(49, 59);
 	
 	return self;
 }

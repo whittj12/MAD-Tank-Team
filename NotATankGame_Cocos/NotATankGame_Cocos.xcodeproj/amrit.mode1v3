@@ -197,49 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>F0E0E4A91244695A00B8C924</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>GameEngine.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>F0E0E4AA1244695A00B8C924</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>GameEngine.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>F0E0E4F3124471DF00B8C924</string>
-						<key>history</key>
-						<array>
-							<string>F0E0E4F1124471DF00B8C924</string>
-							<string>F0E0E4F2124471DF00B8C924</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {995, 677}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 60 995 718 0 0 1280 778 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -323,14 +281,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>35</integer>
+									<integer>39</integer>
 									<integer>28</integer>
 									<integer>9</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 349}, {186, 660}}</string>
+							<string>{{0, 164}, {186, 660}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -365,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MainMenuScene.m</string>
+								<string>GamePlayScene.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -373,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainMenuScene.m</string>
+										<string>GamePlayScene.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F0E0E4EF124471DF00B8C924</string>
+										<string>F0E0E58D1244B6F600B8C924</string>
 										<key>history</key>
 										<array>
 											<string>F0881C20124099D400235459</string>
@@ -396,8 +354,6 @@
 											<string>F0ABF27E1243741500BED535</string>
 											<string>F0ABF27F1243741500BED535</string>
 											<string>F0ABF2801243741500BED535</string>
-											<string>F0ABF2811243741500BED535</string>
-											<string>F0ABF2821243741500BED535</string>
 											<string>F0ABF2841243741500BED535</string>
 											<string>F0ABF2871243741500BED535</string>
 											<string>F0ABF2881243741500BED535</string>
@@ -409,10 +365,12 @@
 											<string>F0ABF2991243746D00BED535</string>
 											<string>F0ABF2AF1243765300BED535</string>
 											<string>F0ABF2B01243765300BED535</string>
-											<string>F0ABF2B11243765300BED535</string>
-											<string>F01A530B1243784100FA1C9B</string>
-											<string>F01A53751243815A00FA1C9B</string>
-											<string>F01A53791243826A00FA1C9B</string>
+											<string>F0E0E51B1244A36600B8C924</string>
+											<string>F0E0E51C1244A36600B8C924</string>
+											<string>F0E0E5291244A3A500B8C924</string>
+											<string>F0E0E52A1244A3A500B8C924</string>
+											<string>F0E0E52B1244A3A500B8C924</string>
+											<string>F0E0E52C1244A3A500B8C924</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -441,7 +399,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>UserTank.h</string>
+								<string>GameEngine.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -449,11 +407,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>UserTank.h</string>
+										<string>GameEngine.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>F0E0E4F0124471DF00B8C924</string>
+										<string>F0E0E58E1244B6F600B8C924</string>
 										<key>history</key>
 										<array>
 											<string>F0881C20124099D400235459</string>
@@ -465,8 +423,6 @@
 											<string>F0881C29124099D400235459</string>
 											<string>F0881ECF1240DB5000235459</string>
 											<string>F0ABF17A1243483900BED535</string>
-											<string>F0ABF251124370E500BED535</string>
-											<string>F0ABF252124370E500BED535</string>
 											<string>F0ABF2771243741500BED535</string>
 											<string>F0ABF2791243741500BED535</string>
 											<string>F0ABF27D1243741500BED535</string>
@@ -475,21 +431,23 @@
 											<string>F0ABF2801243741500BED535</string>
 											<string>F0ABF2811243741500BED535</string>
 											<string>F0ABF2821243741500BED535</string>
-											<string>F0ABF2841243741500BED535</string>
 											<string>F0ABF2891243741500BED535</string>
 											<string>F0ABF28A1243741500BED535</string>
 											<string>F0ABF28B1243741500BED535</string>
 											<string>F0ABF2971243746D00BED535</string>
-											<string>F0ABF2981243746D00BED535</string>
 											<string>F0ABF2B01243765300BED535</string>
 											<string>F01A53121243786E00FA1C9B</string>
 											<string>F0E0E4551244650600B8C924</string>
-											<string>F0E0E4561244650600B8C924</string>
-											<string>F0E0E4571244650600B8C924</string>
 											<string>F0E0E49F124468DB00B8C924</string>
-											<string>F0E0E4CC12446E1E00B8C924</string>
-											<string>F0E0E4CD12446E1E00B8C924</string>
-											<string>F0E0E4CE12446E1E00B8C924</string>
+											<string>F0E0E4FB12447B2500B8C924</string>
+											<string>F0E0E4FC12447B2500B8C924</string>
+											<string>F0E0E4FD12447B2500B8C924</string>
+											<string>F0E0E5211244A36600B8C924</string>
+											<string>F0E0E5221244A36600B8C924</string>
+											<string>F0E0E56B1244AC4C00B8C924</string>
+											<string>F0E0E57C1244AE0E00B8C924</string>
+											<string>F0E0E57D1244AE0E00B8C924</string>
+											<string>F0E0E57E1244AE0E00B8C924</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -693,9 +651,8 @@
 		<string>F0E0E47F1244671C00B8C924</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>F0881B8A1240981400235459</string>
-		<string>/Users/amrit/Documents/My_Apps/NotATankGame_Cocos/NotATankGame_Cocos.xcodeproj</string>
-		<string>F0E0E4A91244695A00B8C924</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/amrit/Documents/My_Apps/NotATankGame_Cocos/NotATankGame_Cocos.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1280 719 0 0 1280 778 </string>
@@ -1046,7 +1003,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {783, 405}}</string>
 								<key>RubberWindowFrame</key>
-								<string>489 331 783 446 0 0 1280 778 </string>
+								<string>460 320 783 446 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -1075,7 +1032,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>489 331 783 446 0 0 1280 778 </string>
+			<string>460 320 783 446 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

@@ -41,4 +41,7 @@
 -(void)removeUnrequiredBulletsFromScene;
 -(void)updateBulletsOnScene;
 
+-(void)updateEnemiesOnScene;
+-(void)removeUnrequiredEnemiesFromScene;
+
 @end

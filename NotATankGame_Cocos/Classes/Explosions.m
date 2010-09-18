@@ -20,17 +20,13 @@ toRemove, hasSubView, iterationsSurvived, iterationsForExplosionToSurvive, image
 	self.explosionID=0;
 	self.explosionLocation = CGPointMake(100, 100);
 	self.explosionAnimationSpeed=0.3;
-	self.explosionImagesSize = CGPointMake(88/kExplosionsImageReductionScaleFactor, 76/kExplosionsImageReductionScaleFactor);
+	self.explosionImagesSize = CGPointMake(88, 76);
 	self.imageArray  = [[NSArray alloc] initWithObjects:
 						[UIImage imageNamed:@"explosion1-1.png"],
 							 [UIImage imageNamed:@"explosion1-2.png"],
 							 [UIImage imageNamed:@"explosion1-3.png"],
 							 [UIImage imageNamed:@"explosion1-4.png"],
 							 nil];
-//	self.image1 = [UIImage imageNamed:@"explosion1-1.png"];
-//	self.image2 = [UIImage imageNamed:@"explosion1-2.png"];
-//	self.image3 = [UIImage imageNamed:@"explosion1-3.png"];
-//	self.image4 = [UIImage imageNamed:@"explosion1-4.png"];
 	self.toRemove = NO;
 	self.hasSubView = NO;
 	self.iterationsSurvived=0;

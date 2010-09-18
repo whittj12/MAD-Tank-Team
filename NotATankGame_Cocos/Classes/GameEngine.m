@@ -178,7 +178,7 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	 */
 	
 	
-	/*
+	
 	
 	
 	if(howOftenToAddEnemies < kIterationsPerNewEnemy)
@@ -192,19 +192,20 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 		howOftenToAddEnemies = 0;
 	}
 	
-	*/
-	
-	
 	[self moveAllBullets];
-	/*
 	[self moveEnemies];
 	
 	[self checkForCollisions];
+	/*
+	
+	
+	
 	
 	[self explosionToRemoveToYes];
 	
-	[self removeUnwantedEnemies];
+	
 	 */
+	[self removeUnwantedEnemies];
 	[self removeUnwantedBullets];
 	
 	/*
@@ -304,10 +305,13 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 						
 						
 						//create an explosion at the point of this collision
-						explosion1 = [[Explosions alloc] init];
-						explosion1.explosionID = explosionUniqueIdentifier;
-						[explosion1 setExplosionLocation:enemy.enemyLocation];
-						[explosionsPool addObject:explosion1];
+//						explosion1 = [[Explosions alloc] init];
+//						explosion1.explosionID = explosionUniqueIdentifier;
+//						[explosion1 setExplosionLocation:enemy.enemyLocation];
+//						[explosionsPool addObject:explosion1];
+//						
+//						[explosion1 release];
+//						explosionUniqueIdentifier++;
 						
 						/*
 						 13/09/10 - amrit - tried using nstimer to sort out when animation is finished
@@ -324,9 +328,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 //													   selector:@selector(explosionToRemoveToYes:) 
 //													   userInfo:[NSNumber numberWithInt:explosionUniqueIdentifier]
 //														repeats:NO];
-						[explosion1 release];
-						explosionUniqueIdentifier++;
-						
 					}
 				}
 			}
