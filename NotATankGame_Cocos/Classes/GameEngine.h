@@ -18,7 +18,6 @@
 @interface GameEngine : NSObject {
 	
 	UserTank * player1;
-	//UIImage * player1TankImage;
 	
 	Explosions * explosion1;
 	int explosionUniqueIdentifier;
@@ -30,7 +29,6 @@
 	NSMutableArray * enemyPool;
 	NSMutableArray * tempEnemyPool;
 	NSMutableArray * enemiesToRemoveFromView;
-	NSNumber * tempEnemyID;
 	int enemyUniqueIdentifier;
 	
 	//for special weapons
@@ -47,8 +45,6 @@
 	Weapon * nuke;
 	Weapon * rocket;
 	Weapon * laser;
-	
-	Sounds * laserSound;
 	
 	int currentlySelectedWeaponID;
 	int bulletUniqueIdentifier;
@@ -104,26 +100,21 @@
 -(void)createNewRocket;
 -(void)createNewLaser;
 
--(void)explosionToRemoveToYes;//:(NSTimer*)timer;
+-(void)explosionToRemoveToYes;
 -(void)removeUnwantedExplosions;
 -(void)clearExplosionsToRemoveFromViewArray;
-
-//@property(nonatomic, retain) UIImage * player1TankImage;
 
 @property(nonatomic) NSInteger gameState;
 @property(nonatomic) double gameScore;
 @property(nonatomic) bool thereIsSomeBulletToRemove;
 @property(nonatomic) bool thereIsSomeEnemyToRemove;
 
-@property(nonatomic, retain) NSMutableArray * tempBulletPool;
 @property(nonatomic, retain) NSMutableArray * bulletsPool;
 @property(nonatomic, retain) NSMutableArray * bulletsToRemoveFromView;
-@property(nonatomic, retain) NSNumber * tempBulletsID;
 
 @property(nonatomic, retain) NSMutableArray * enemyPool;
 @property(nonatomic, retain) NSMutableArray * tempEnemyPool;
 @property(nonatomic, retain) NSMutableArray * enemiesToRemoveFromView;
-@property(nonatomic, retain) NSNumber * tempEnemyID;
 
 @property(nonatomic, retain) NSMutableArray * explosionsPool;
 @property(nonatomic, retain) NSMutableArray * tempExplosionsPool;

@@ -304,7 +304,8 @@
 	
 	CCLOG(@"dealloc: %@", self);
 	
-	//[theGameEngine release];
+	NSLog(@"the game engine retain count %i", [theGameEngine retainCount]);
+	[theGameEngine release];
 	
 	[super dealloc];
 }

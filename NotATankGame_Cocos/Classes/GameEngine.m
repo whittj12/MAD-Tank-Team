@@ -13,9 +13,9 @@
 
 @implementation GameEngine
 
-@synthesize gameState, gameScore, bulletsPool, tempBulletPool, 
-thereIsSomeBulletToRemove, bulletsToRemoveFromView,tempBulletsID,
-enemyPool, tempEnemyID, enemiesToRemoveFromView, thereIsSomeEnemyToRemove,
+@synthesize gameState, gameScore, bulletsPool, 
+thereIsSomeBulletToRemove, bulletsToRemoveFromView,
+enemyPool, enemiesToRemoveFromView, thereIsSomeEnemyToRemove,
 tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 
 /*
@@ -28,7 +28,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	[super init];
 	
 	player1 = [[UserTank alloc] init];
-	//player1TankImage = player1.image1;
 	
 	explosionsPool = [[NSMutableArray alloc] initWithCapacity:kMaxEnemiesAllowedOnScreen];
 	tempExplosionsPool = [[NSMutableArray alloc] initWithCapacity:kMaxEnemiesAllowedOnScreen];
@@ -48,7 +47,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	//for special weapons
 	
 	//for autofire machinegun bullets
-	tempBulletPool = [[NSMutableArray alloc] initWithCapacity:kMaxBulletsAllowed];
 	bulletsToRemoveFromView = [[NSMutableArray alloc] initWithCapacity:kMaxBulletsAllowed];
 	bulletsPool = [[NSMutableArray alloc] initWithCapacity:kMaxBulletsAllowed];
 	
@@ -56,10 +54,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	
 	howOftenToAddBullets = 0;
 	howOftenToAddEnemies = 0;
-	
-	
-	//laserSound = [[Sounds alloc]init];
-	
 	
 	return self;
 }
@@ -81,16 +75,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 {
 	nuke = [[Weapon alloc] init];
 	[nuke setupWeaponToNuke];
-	//nuke.damage = 100;
-//	nuke.damageRadius = 50;
-//	nuke.imageSize = CGPointMake(100, 60);
-//	NSString * tempString = [NSString stringWithFormat:@"nukerPlane.png"];
-//	nuke.image1 = tempString;
-//	[tempString release];
-//	nuke.bulletVelocity = CGPointMake(-5, -3.5); //find out a good formula to use for y speed to make it travel 
-//											//perfect diagonal using kScreenHeight and kScreenWidth
-//											//probably can use pythagoras theory for diagonal like vector here
-//	nuke.weaponLocation = CGPointMake(kScreenWidthPixels-80, kScreenHeightPixels);
 }
 
 /*
@@ -101,14 +85,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 {
 	rocket = [[Weapon alloc] init];
 	[rocket setupWeaponToRocket];
-//	rocket.damage = 50;
-//	rocket.damageRadius = 50;
-//	rocket.imageSize = CGPointMake(55, 19);
-//	//rocket.image1 = [UIImage imageNamed:@"rocket.png"];
-//	NSString * tempString = [NSString stringWithFormat:@"rocket.png"];
-//	rocket.image1 = tempString;
-//	[tempString release];
-//	rocket.bulletVelocity = CGPointMake(10, 0);
 }
 
 /*
@@ -119,14 +95,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 {
 	laser = [[Weapon alloc] init];
 	[laser setupWeaponToLaserGun];
-//	laser.damage = 30;
-//	laser.damageRadius = 50;
-//	laser.imageSize = CGPointMake(53, 10);
-//	//laser.imageSize = CGPointMake(480, 10);
-//	NSString * tempString = [NSString stringWithFormat:@"laserBeam2.png"];
-//	laser.image1 = tempString;
-//	[tempString release];
-//	laser.bulletVelocity = CGPointMake(35, 0);
 }
 
 /*
@@ -171,13 +139,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 			else 
 			{
 				[self fireNewBullet];
-				
-				
-				/*
-				 Testing play laser noise
-				 */
-				
-				//[laserSound playSound];
 				
 				howOftenToAddBullets = 0;
 			}
@@ -248,14 +209,7 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	
 	/*
 	[self removeUnwantedExplosions];
-	
-	
 	*/
-	
-	
-	//NSLog(@"count of bullets pool : %i", [bulletsPool count]);
-
-	//NSLog(@"number of enemies %i", [enemyPool count]);
 }
 
 /*
@@ -456,10 +410,7 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
  */
 -(void)clearExplosionsToRemoveFromViewArray
 {
-	//if([explosionsToRemoveFromView count] > 0)
-	//{
-		[explosionsToRemoveFromView removeAllObjects];
-	//}
+	[explosionsToRemoveFromView removeAllObjects];
 }
 
 /*
@@ -636,10 +587,7 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
  */
 -(void)clearEnemiesToRemoveFromViewArray
 {
-	//if([enemiesToRemoveFromView count] > 0)
-	//{
-		[enemiesToRemoveFromView removeAllObjects];
-	//}
+	[enemiesToRemoveFromView removeAllObjects];
 }
 
 
@@ -714,8 +662,8 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 		{			
 			if(currentlySelectedWeaponID != kNuke)
 			{
-				bullets.weaponLocation = player1.tankLocation;
-				//change bullets yLocation
+				//bullets.weaponLocation = player1.tankLocation;
+				bullets.weaponLocation = CGPointMake(player1.tankLocation.x+(player1.tankImgSize.x), player1.tankLocation.y);
 			}
 			bullets.fired = YES;
 		}
@@ -759,26 +707,17 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	 */
 	if(thereIsSomeBulletToRemove)
 	{
-		//[tempBulletPool removeAllObjects];
-	
+		tempBulletPool = [[NSMutableArray alloc] initWithCapacity:kMaxBulletsAllowed];
 		for(Weapon * bullets in bulletsPool)
 		{
-//			if(!bullets.toRemove)
-//			{
-//				[tempBulletPool addObject:bullets];
-//			}
 			if(bullets.toRemove)
 			{
 				[tempBulletPool addObject:bullets];
 			}
 		}
-
-		//[bulletsPool removeAllObjects];
 		[bulletsPool removeObjectsInArray:tempBulletPool];
-
-		//[tempBulletPool removeAllObjects];
-	//	[bulletsPool addObjectsFromArray:tempBulletPool];
-		
+		//NSLog(@"tempbulletpool retain count %i", [tempBulletPool retainCount]);
+		[tempBulletPool release];
 	}	
 }
 
@@ -804,10 +743,7 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
  */
 -(void)clearBulletsToRemoveFromViewArray
 {
-	//if([bulletsToRemoveFromView count] > 0)
-	//{
-		[bulletsToRemoveFromView removeAllObjects];
-	//}
+	[bulletsToRemoveFromView removeAllObjects];
 }
 
 /*
@@ -868,7 +804,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 -(void)unPauseGame
 {
 	self.gameState = kGameStateRunning;
-	NSLog(@"game  is now running");
 }
 
 /*
@@ -877,29 +812,33 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 -(void)pauseGame
 {
 	self.gameState = kGameStatePaused;
-	NSLog(@"game  is now paused");
 }
 
 -(void)dealloc
 {
-	
-	//[player1TankImage release];
-	
+	//NSLog(@"enemypool retain count %i", [enemyPool retainCount]);
 	[enemyPool release];
+	
+	//NSLog(@"temp enemypool retain count %i", [tempEnemyPool retainCount]);
 	[tempEnemyPool release];
+	
+	//NSLog(@"enemiesToRemoveFromView retain count %i", [enemiesToRemoveFromView retainCount]);
 	[enemiesToRemoveFromView release];
-	[tempEnemyID release];
 	
+	//NSLog(@"buleltspool retain count %i", [bulletsPool retainCount]);
 	[bulletsPool release];
-	[tempBulletPool release];
+	
+	//NSLog(@"bulletsToRemoveFromView retain count %i", [bulletsToRemoveFromView retainCount]);
 	[bulletsToRemoveFromView release];
-	[tempBulletsID release];
 	
+	//NSLog(@"explosionsPool retain count %i", [explosionsPool retainCount]);
 	[explosionsPool release];
-	[tempExplosionsPool release];
-	[explosionsToRemoveFromView release];
 	
-	[laserSound release];
+	//NSLog(@"tempExplosionsPool retain count %i", [tempExplosionsPool retainCount]);
+	[tempExplosionsPool release];
+	
+	//NSLog(@"explosionstoremovefromview retain count %i", [explosionsToRemoveFromView retainCount]);
+	[explosionsToRemoveFromView release];
 	
 	[super dealloc];
 }
