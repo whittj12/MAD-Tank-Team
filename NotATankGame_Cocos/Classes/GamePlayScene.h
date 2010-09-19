@@ -26,6 +26,9 @@
 	
 	CCMenuItemLabel * tapToPlayLabelMenuItem;
 	
+	CCParticleMeteor * tankExplosions;
+	
+	CCParticleGalaxy * playerTankParticleEffect;
 }
 
 +(id) scene;
@@ -43,5 +46,8 @@
 
 -(void)updateEnemiesOnScene;
 -(void)removeUnrequiredEnemiesFromScene;
+
+-(void) drawCollisionExplosionParticles:(CGPoint)collisionLocation
+							 imagesName:(NSString *) imageName;
 
 @end

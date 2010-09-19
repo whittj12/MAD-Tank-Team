@@ -56,9 +56,26 @@
 		[self schedule:@selector(gameLoop:) interval:0];
 		
 		self.isTouchEnabled = YES;
+		
+		//add frequently used images to the texture cache
+//		[[CCTextureCache sharedTextureCache] addImage:@"enemyTank1.png"];
+//		[[CCTextureCache sharedTextureCache] addImage:@"playerTank.png"];
+//		
+//		[[CCTextureCache sharedTextureCache] addImage:@"bullet1.png"];
+//		[[CCTextureCache sharedTextureCache] addImage:@"nukerPlane.png"];
+//		[[CCTextureCache sharedTextureCache] addImage:@"rocket.png"];
+//		[[CCTextureCache sharedTextureCache] addImage:@"laserBeam2.png"];
+		
+		playerTankParticleEffect = [[CCParticleGalaxy alloc] initWithTotalParticles:50];
+		playerTankParticleEffect.texture = [[CCTextureCache sharedTextureCache] addImage:@"playerTank.png"];
+		playerTankParticleEffect.position = [theGameEngine getUserTankLocation];
+		playerTankParticleEffect.autoRemoveOnFinish = YES;
+		[self addChild:playerTankParticleEffect];
+		//NSLog(@"playertankparticleeffect retain count %i", [playerTankParticleEffect retainCount]);
 	}
 	return self;
 }
+
 
 -(void)drawUserTankToScreen
 {
@@ -102,6 +119,11 @@
 	[playerTankSprite setPosition:newPoint];
 	//update location of playertank in gamengine
 	[theGameEngine setUserTankLocation:newPoint];
+	
+	//testing particle emitter stuff - 19/09
+	//emitter.position = (convertedLocation);
+	
+	playerTankParticleEffect.position = newPoint;
 }
 
 -(void)updateScene
@@ -152,7 +174,7 @@
 			//NSLog(@"new sprites location = %f , %f", tempSprite.position.x, tempSprite.position.y);
 			tempSprite.tag = bullet.weaponID;
 			
-			[self addChild:tempSprite]; 
+			[self addChild:tempSprite];
 			
 			//NSLog(@"children in gameplayscene: %i", [[self children] count]);
 			
@@ -266,13 +288,29 @@
 	}
 }
 
+-(void) drawCollisionExplosionParticles:(CGPoint)collisionLocation
+							 imagesName:(NSString *) imageName
+{
+	tankExplosions = [[CCParticleMeteor alloc] initWithTotalParticles:15];
+	tankExplosions.duration=0.5f;
+	//emitter.gravity=CGPointZero;
+	tankExplosions.autoRemoveOnFinish=YES;
+	//emitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"enemyTank1.png"];
+	tankExplosions.texture = [[CCTextureCache sharedTextureCache] addImage:imageName];
+	tankExplosions.position = collisionLocation;
+	[self addChild:tankExplosions];
+	
+	//NSLog(@"tankexplosions retaincount %i", [tankExplosions retainCount]);
+}
+
 -(void)removeUnrequiredEnemiesFromScene
 {
 	if([theGameEngine thereIsSomeEnemyToRemove])
 	{
-		for(NSNumber * enemyID in [theGameEngine enemiesToRemoveFromView])
+		for(EnemyTank * enemy in [theGameEngine enemiesToRemoveFromView])
 		{
-			[self removeChild:[self getChildByTag:[enemyID intValue]] cleanup:YES];
+			[self removeChild:[self getChildByTag:[enemy enemyID]] cleanup:YES];
+			[self drawCollisionExplosionParticles:[enemy enemyLocation] imagesName:[enemy image1]];
 		}
 		[theGameEngine clearEnemiesToRemoveFromViewArray];
 	}
@@ -343,7 +381,8 @@
 	
 	//NSLog(@"the game engine retain count %i", [theGameEngine retainCount]);
 	[theGameEngine release];
-	
+	//NSLog(@"playertankparticleeffect retain count %i", [playerTankParticleEffect retainCount]);
+	[playerTankParticleEffect release];
 	[super dealloc];
 }
 

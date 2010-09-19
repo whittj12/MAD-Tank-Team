@@ -16,7 +16,7 @@
 @synthesize gameState, gameScore, bulletsPool, 
 thereIsSomeBulletToRemove, bulletsToRemoveFromView,
 enemyPool, enemiesToRemoveFromView, thereIsSomeEnemyToRemove,
-tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
+tempEnemyPool;
 
 /*
  Whichever class uses this GameEngine will create an instance of it
@@ -28,11 +28,6 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	[super init];
 	
 	player1 = [[UserTank alloc] init];
-	
-	explosionsPool = [[NSMutableArray alloc] initWithCapacity:kMaxEnemiesAllowedOnScreen];
-	tempExplosionsPool = [[NSMutableArray alloc] initWithCapacity:kMaxEnemiesAllowedOnScreen];
-	explosionsToRemoveFromView = [[NSMutableArray alloc] initWithCapacity:kMaxEnemiesAllowedOnScreen];
-	explosionUniqueIdentifier = 100;
 	
 	enemyPool = [[NSMutableArray alloc] initWithCapacity:kMaxEnemiesAllowedOnScreen];
 	tempEnemyPool = [[NSMutableArray alloc] initWithCapacity:kMaxEnemiesAllowedOnScreen];
@@ -299,9 +294,10 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 						
 						thereIsSomeEnemyToRemove = YES;
 						
-						tempBulletsID = [[NSNumber alloc] initWithInt:[enemy enemyID]];
-						[enemiesToRemoveFromView addObject:tempBulletsID];
-						[tempBulletsID release];
+						//tempBulletsID = [[NSNumber alloc] initWithInt:[enemy enemyID]];
+						//[enemiesToRemoveFromView addObject:tempBulletsID];
+						[enemiesToRemoveFromView addObject:enemy];
+						//[tempBulletsID release];
 						
 						
 						//create an explosion at the point of this collision
@@ -347,72 +343,72 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
  be flagged for removal. its still not particularly efficient because involves a big for loop through
  collection of all explosions on screen, though still better than timer i think (especially when NUKE is involved)
  */
--(void)explosionToRemoveToYes//:(NSTimer*)timer
-{
-	for (Explosions * explosion in explosionsPool)
-	{
-		if(!explosion.toRemove)
-		{
-			if(explosion.iterationsSurvived < explosion.iterationsForExplosionToSurvive)
-			{
-				explosion.iterationsSurvived++;
-			}
-			else 
-			{
-				[explosion setToRemove:YES];
-				thereIsSomeExplosionToRemove = YES;
-				
-				tempBulletsID = [[NSNumber alloc] initWithInt:[explosion explosionID]];
-				[explosionsToRemoveFromView addObject:tempBulletsID];
-				//NSLog(@"count of explosions toremove from view = %i", [explosionsToRemoveFromView count]);
-				[tempBulletsID release];
-			}
-		}
-
-	}
-	/* - old way
-	for(Explosions * explosion in explosionsPool)
-	{
-		if(explosion.explosionID==[[timer userInfo] intValue])
-		{
-			[explosion setToRemove:YES];
-			//NSLog(@"explosion with ID of %i is now set up properly for removal", explosion.explosionID);
-		}
-	}
-	thereIsSomeExplosionToRemove = YES;
-	[explosionsToRemoveFromView addObject:[timer userInfo]];
-	//NSLog(@"last explosion to remove was : %i", [[explosionsToRemoveFromView lastObject] intValue] );
-	 */
-}
+//-(void)explosionToRemoveToYes//:(NSTimer*)timer
+//{
+//	for (Explosions * explosion in explosionsPool)
+//	{
+//		if(!explosion.toRemove)
+//		{
+//			if(explosion.iterationsSurvived < explosion.iterationsForExplosionToSurvive)
+//			{
+//				explosion.iterationsSurvived++;
+//			}
+//			else 
+//			{
+//				[explosion setToRemove:YES];
+//				thereIsSomeExplosionToRemove = YES;
+//				
+//				tempBulletsID = [[NSNumber alloc] initWithInt:[explosion explosionID]];
+//				[explosionsToRemoveFromView addObject:tempBulletsID];
+//				//NSLog(@"count of explosions toremove from view = %i", [explosionsToRemoveFromView count]);
+//				[tempBulletsID release];
+//			}
+//		}
+//
+//	}
+//	/* - old way
+//	for(Explosions * explosion in explosionsPool)
+//	{
+//		if(explosion.explosionID==[[timer userInfo] intValue])
+//		{
+//			[explosion setToRemove:YES];
+//			//NSLog(@"explosion with ID of %i is now set up properly for removal", explosion.explosionID);
+//		}
+//	}
+//	thereIsSomeExplosionToRemove = YES;
+//	[explosionsToRemoveFromView addObject:[timer userInfo]];
+//	//NSLog(@"last explosion to remove was : %i", [[explosionsToRemoveFromView lastObject] intValue] );
+//	 */
+//}
 
 /*
  Remove any explosions which no longer need to be on screen
  */
--(void)removeUnwantedExplosions
-{
-	if(thereIsSomeExplosionToRemove)
-	{
-		[tempExplosionsPool removeAllObjects];
-		for(Explosions * explosion in explosionsPool)
-		{
-			if(!explosion.toRemove)
-			{
-				[tempExplosionsPool addObject:explosion];
-			}
-		}
-		[explosionsPool removeAllObjects];
-		[explosionsPool addObjectsFromArray:tempExplosionsPool];
-	}
-}
+//-(void)removeUnwantedExplosions
+//{
+//	if(thereIsSomeExplosionToRemove)
+//	{
+//		[tempExplosionsPool removeAllObjects];
+//		for(Explosions * explosion in explosionsPool)
+//		{
+//			if(!explosion.toRemove)
+//			{
+//				[tempExplosionsPool addObject:explosion];
+//			}
+//		}
+//		[explosionsPool removeAllObjects];
+//		[explosionsPool addObjectsFromArray:tempExplosionsPool];
+//	}
+//}
 
 /*
  When the games view class is done using this (to know which subviews to remove)
  it will call this method to clean up the array
  */
--(void)clearExplosionsToRemoveFromViewArray
-{
-	[explosionsToRemoveFromView removeAllObjects];
-}
+//-(void)clearExplosionsToRemoveFromViewArray
+//{
+//	[explosionsToRemoveFromView removeAllObjects];
+//}
 
 /*
  If more enemies are allowed to be added (based on limit defined in constants file)
@@ -540,9 +536,9 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 					 just re-using that variable which is already declared as it's the same type
 					 as what we need and it isn't being used by moveBullets() at same time as this
 					 */
-					tempBulletsID = [[NSNumber alloc] initWithInt:[enemy enemyID]];
-					[enemiesToRemoveFromView addObject:tempBulletsID];
-					[tempBulletsID release];
+					//tempBulletsID = [[NSNumber alloc] initWithInt:[enemy enemyID]];
+					[enemiesToRemoveFromView addObject:enemy];
+					//[tempBulletsID release];
 				}
 			}
 		}
@@ -832,14 +828,12 @@ tempEnemyPool, explosionsPool, tempExplosionsPool, explosionsToRemoveFromView;
 	//NSLog(@"bulletsToRemoveFromView retain count %i", [bulletsToRemoveFromView retainCount]);
 	[bulletsToRemoveFromView release];
 	
-	//NSLog(@"explosionsPool retain count %i", [explosionsPool retainCount]);
-	[explosionsPool release];
-	
-	//NSLog(@"tempExplosionsPool retain count %i", [tempExplosionsPool retainCount]);
-	[tempExplosionsPool release];
-	
-	//NSLog(@"explosionstoremovefromview retain count %i", [explosionsToRemoveFromView retainCount]);
-	[explosionsToRemoveFromView release];
+//	//NSLog(@"explosionsPool retain count %i", [explosionsPool retainCount]);
+//	[explosionsPool release];
+//	//NSLog(@"tempExplosionsPool retain count %i", [tempExplosionsPool retainCount]);
+//	[tempExplosionsPool release];
+//	//NSLog(@"explosionstoremovefromview retain count %i", [explosionsToRemoveFromView retainCount]);
+//	[explosionsToRemoveFromView release];
 	
 	[super dealloc];
 }

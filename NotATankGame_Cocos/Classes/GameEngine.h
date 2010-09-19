@@ -11,7 +11,6 @@
 #import "Weapon.h"
 #import "GameEngine.h"
 #import "EnemyTank.h"
-#import "Explosions.h"
 #import "Sounds.h"
 
 
@@ -19,11 +18,11 @@
 	
 	UserTank * player1;
 	
-	Explosions * explosion1;
-	int explosionUniqueIdentifier;
-	NSMutableArray * explosionsPool;
-	NSMutableArray * tempExplosionsPool;
-	NSMutableArray * explosionsToRemoveFromView;
+	//Explosions * explosion1;
+	//int explosionUniqueIdentifier;
+//	NSMutableArray * explosionsPool;
+//	NSMutableArray * tempExplosionsPool;
+//	NSMutableArray * explosionsToRemoveFromView;
 	
 	EnemyTank * enemyTankType1;
 	NSMutableArray * enemyPool;
@@ -100,9 +99,9 @@
 -(void)createNewRocket;
 -(void)createNewLaser;
 
--(void)explosionToRemoveToYes;
--(void)removeUnwantedExplosions;
--(void)clearExplosionsToRemoveFromViewArray;
+//-(void)explosionToRemoveToYes;
+//-(void)removeUnwantedExplosions;
+//-(void)clearExplosionsToRemoveFromViewArray;
 
 @property(nonatomic) NSInteger gameState;
 @property(nonatomic) double gameScore;
@@ -116,8 +115,8 @@
 @property(nonatomic, retain) NSMutableArray * tempEnemyPool;
 @property(nonatomic, retain) NSMutableArray * enemiesToRemoveFromView;
 
-@property(nonatomic, retain) NSMutableArray * explosionsPool;
-@property(nonatomic, retain) NSMutableArray * tempExplosionsPool;
-@property(nonatomic, retain) NSMutableArray * explosionsToRemoveFromView;
+//@property(nonatomic, retain) NSMutableArray * explosionsPool;
+//@property(nonatomic, retain) NSMutableArray * tempExplosionsPool;
+//@property(nonatomic, retain) NSMutableArray * explosionsToRemoveFromView;
 
 @end
