@@ -6,19 +6,26 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <AudioToolbox/AudioToolbox.h>
+//#import <Foundation/Foundation.h>
+//#import <AudioToolbox/AudioToolbox.h>
+#import "cocos2d.h"
+#import "CDAudioManager.h"
+#import "SimpleAudioEngine.h"
 
 @interface Sounds : NSObject {
 	
-	NSURL * soundUrl;
-	SystemSoundID soundID;
+//	NSURL * soundUrl;
+//	SystemSoundID soundID;
 }
 
-@property(nonatomic, retain) NSURL * soundUrl;
-@property(nonatomic) SystemSoundID soundID;
+-(void)playLevel1BGMusic;
+-(void)playLaserBeamSound;
+-(void)playMachineGunSound;
 
--(void)playSound;
--(void)stopSound;
+//@property(nonatomic, retain) NSURL * soundUrl;
+//@property(nonatomic) SystemSoundID soundID;
+//
+//-(void)playSound;
+//-(void)stopSound;
 
 @end

@@ -34,18 +34,6 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
 		
-		// create and initialize a Label
-		CCLabel* label = [CCLabel labelWithString:@"GamePlay Scene" fontName:@"Marker Felt" fontSize:32];
-		
-		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-		
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , 300 );
-		
-		// add the label as a child to this Layer
-		[self addChild: label];
-		
 		[self setUpScene];
 		
 		theGameEngine = [[GameEngine alloc] init]; 
@@ -69,9 +57,14 @@
 		playerTankParticleEffect = [[CCParticleGalaxy alloc] initWithTotalParticles:50];
 		playerTankParticleEffect.texture = [[CCTextureCache sharedTextureCache] addImage:@"playerTank.png"];
 		playerTankParticleEffect.position = [theGameEngine getUserTankLocation];
+		playerTankParticleEffect.life=1;
+		[self addChild:playerTankParticleEffect z:10];
 		playerTankParticleEffect.autoRemoveOnFinish = YES;
-		[self addChild:playerTankParticleEffect];
 		//NSLog(@"playertankparticleeffect retain count %i", [playerTankParticleEffect retainCount]);
+		
+		//play the background music for this scene
+		gameSounds = [[Sounds alloc] init];
+		[gameSounds playLevel1BGMusic];
 	}
 	return self;
 }
@@ -179,12 +172,44 @@
 			//NSLog(@"children in gameplayscene: %i", [[self children] count]);
 			
 			[bullet setHasSubView:YES];
+			
+			
+			//play appropriate sound for that bullet
+			switch (theGameEngine.currentlySelectedWeaponID) {
+				case kLasergun:
+					[gameSounds playLaserBeamSound];
+					break;
+					
+				case kMachinegun:
+					[gameSounds playMachineGunSound];
+					break;
+					
+				default:
+					break;
+			}
 		}
 	}
 }
 
 -(void)setUpScene
 {
+	//NOTE : this is probably the wrong way to do a background sprite, but its jsut here for a "quick fix'
+	CCSprite * backgroundSprite = [CCSprite spriteWithFile:@"space1.jpg"];
+	backgroundSprite.position=ccp(240, 160);
+	[self addChild:backgroundSprite];
+	
+	// create and initialize a Label
+	CCLabel* label = [CCLabel labelWithString:@"GamePlay Scene" fontName:@"Marker Felt" fontSize:32];
+	
+	// ask director the the window size
+	CGSize size = [[CCDirector sharedDirector] winSize];
+	
+	// position the label on the center of the screen
+	label.position =  ccp( size.width /2 , 300 );
+	
+	// add the label as a child to this Layer
+	[self addChild: label];
+	
 	int gap = 6;
 	int btnWidth=55;
 	float btnY=0;
@@ -291,14 +316,48 @@
 -(void) drawCollisionExplosionParticles:(CGPoint)collisionLocation
 							 imagesName:(NSString *) imageName
 {
-	tankExplosions = [[CCParticleMeteor alloc] initWithTotalParticles:15];
+	tankExplosions = [[CCQuadParticleSystem alloc] initWithTotalParticles:15];
 	tankExplosions.duration=0.5f;
-	//emitter.gravity=CGPointZero;
-	tankExplosions.autoRemoveOnFinish=YES;
+	tankExplosions.gravity=CGPointZero;
+	
+	tankExplosions.angle = 90;
+	tankExplosions.angleVar=360;
+	tankExplosions.speed=160;
+	tankExplosions.speedVar=20;
+	tankExplosions.radialAccel=-120;
+	tankExplosions.radialAccelVar=0;
+	tankExplosions.tangentialAccel=30;
+	tankExplosions.tangentialAccelVar=0;
+	
+	tankExplosions.life=1;
+	tankExplosions.lifeVar=1;
+	
+	tankExplosions.startSpin=0;
+	tankExplosions.startSpinVar=0;
+	tankExplosions.endSpin=0;
+	tankExplosions.endSpinVar=0;
+	ccColor4F startColor = {0.5f, 0.5f, 0.5f, 1.0f};
+	tankExplosions.startColor = startColor;
+	ccColor4F startColorVar = {0.5f, 0.5f, 0.5f, 1.0f};
+	tankExplosions.startColorVar = startColorVar;
+	ccColor4F endColor = {0.1f, 0.1f, 0.1f, 0.2f};
+	tankExplosions.endColor = endColor;
+	ccColor4F endColorVar = {0.1f, 0.1f, 0.1f, 0.2f};
+	tankExplosions.endColorVar=endColorVar;
+	
+	tankExplosions.startSize = 30.0f;
+	tankExplosions.startSizeVar=10.0f;
+	tankExplosions.endSize = kParticleStartSizeEqualToEndSize;
+	
+	tankExplosions.emissionRate = tankExplosions.totalParticles/tankExplosions.life;
+	
+	tankExplosions.blendAdditive=YES;
+	
 	//emitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"enemyTank1.png"];
 	tankExplosions.texture = [[CCTextureCache sharedTextureCache] addImage:imageName];
 	tankExplosions.position = collisionLocation;
-	[self addChild:tankExplosions];
+	[self addChild:tankExplosions z:10];
+	tankExplosions.autoRemoveOnFinish=YES;
 	
 	//NSLog(@"tankexplosions retaincount %i", [tankExplosions retainCount]);
 }
@@ -383,6 +442,7 @@
 	[theGameEngine release];
 	//NSLog(@"playertankparticleeffect retain count %i", [playerTankParticleEffect retainCount]);
 	[playerTankParticleEffect release];
+	[gameSounds release];
 	[super dealloc];
 }
 

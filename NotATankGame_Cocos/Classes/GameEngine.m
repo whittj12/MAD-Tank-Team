@@ -16,7 +16,7 @@
 @synthesize gameState, gameScore, bulletsPool, 
 thereIsSomeBulletToRemove, bulletsToRemoveFromView,
 enemyPool, enemiesToRemoveFromView, thereIsSomeEnemyToRemove,
-tempEnemyPool;
+tempEnemyPool, currentlySelectedWeaponID;
 
 /*
  Whichever class uses this GameEngine will create an instance of it

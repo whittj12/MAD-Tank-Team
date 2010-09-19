@@ -32,6 +32,11 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
 		
+		//NOTE : this is probably the wrong way to do a background sprite, but its jsut here for a "quick fix'
+		CCSprite * backgroundSprite = [CCSprite spriteWithFile:@"space2.jpg"];
+		backgroundSprite.position=ccp(240, 160);
+		[self addChild:backgroundSprite];
+		
 		// create and initialize a Label
 		CCLabel* label = [CCLabel labelWithString:@"Main Menu" fontName:@"Marker Felt" fontSize:32];
 		
@@ -70,7 +75,6 @@
 	[mainMenu alignItemsVertically];
 	
 	[self addChild:mainMenu];
-	
 }
 
 -(void)replaceToGameScene

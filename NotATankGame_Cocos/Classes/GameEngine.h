@@ -115,6 +115,8 @@
 @property(nonatomic, retain) NSMutableArray * tempEnemyPool;
 @property(nonatomic, retain) NSMutableArray * enemiesToRemoveFromView;
 
+@property(nonatomic) int currentlySelectedWeaponID;
+
 //@property(nonatomic, retain) NSMutableArray * explosionsPool;
 //@property(nonatomic, retain) NSMutableArray * tempExplosionsPool;
 //@property(nonatomic, retain) NSMutableArray * explosionsToRemoveFromView;

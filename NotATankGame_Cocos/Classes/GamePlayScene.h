@@ -17,6 +17,7 @@
 #import "DefineAllConstants.h"
 #import "EnemyTank.h"
 #import "Explosions.h"
+#import "Sounds.h"
 
 @interface GamePlayScene : CCLayer {
 
@@ -26,9 +27,11 @@
 	
 	CCMenuItemLabel * tapToPlayLabelMenuItem;
 	
-	CCParticleMeteor * tankExplosions;
+	CCQuadParticleSystem * tankExplosions;
 	
 	CCParticleGalaxy * playerTankParticleEffect;
+	
+	Sounds * gameSounds;
 }
 
 +(id) scene;

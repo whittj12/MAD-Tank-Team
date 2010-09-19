@@ -222,6 +222,11 @@
 		DCCBF1BB0F6022AE0040855A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1BA0F6022AE0040855A /* OpenGLES.framework */; };
 		DCCBF1BD0F6022AE0040855A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1BC0F6022AE0040855A /* QuartzCore.framework */; };
 		DCCBF1BF0F6022AE0040855A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1BE0F6022AE0040855A /* UIKit.framework */; };
+		F060BB501245CFFE0048B2C7 /* BGMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F060BB4F1245CFFE0048B2C7 /* BGMusic.mp3 */; };
+		F060BB521245D0150048B2C7 /* laser.wav in Resources */ = {isa = PBXBuildFile; fileRef = F060BB511245D0150048B2C7 /* laser.wav */; };
+		F060BB541245D04C0048B2C7 /* drip.wav in Resources */ = {isa = PBXBuildFile; fileRef = F060BB531245D04C0048B2C7 /* drip.wav */; };
+		F060BB561245D0630048B2C7 /* gunshot4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F060BB551245D0630048B2C7 /* gunshot4.wav */; };
+		F060BBAF1245D8FE0048B2C7 /* space1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F060BBAE1245D8FE0048B2C7 /* space1.jpg */; };
 		F0881BCE124098C400235459 /* DefineAllConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F0881BCD124098C400235459 /* DefineAllConstants.m */; };
 		F0881BDC124098D400235459 /* EnemyTank.m in Sources */ = {isa = PBXBuildFile; fileRef = F0881BD1124098D400235459 /* EnemyTank.m */; };
 		F0881BDE124098D400235459 /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F0881BD5124098D400235459 /* GameEngine.m */; };
@@ -255,6 +260,7 @@
 		F0881D461240BC4400235459 /* pauseBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881D391240BC4400235459 /* pauseBtn.png */; };
 		F0881D471240BC4400235459 /* wolfIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0881D3A1240BC4400235459 /* wolfIcon.jpg */; };
 		F0881D481240BC4400235459 /* terrain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0881D3B1240BC4400235459 /* terrain.jpg */; };
+		F0C3F22A1245DAE9003615A4 /* space2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0C3F2291245DAE9003615A4 /* space2.jpg */; };
 		F0D785A31245C32E0033D9D1 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D785A21245C32E0033D9D1 /* fire.png */; };
 /* End PBXBuildFile section */
 
@@ -483,6 +489,11 @@
 		DCCBF1BA0F6022AE0040855A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DCCBF1BC0F6022AE0040855A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DCCBF1BE0F6022AE0040855A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F060BB4F1245CFFE0048B2C7 /* BGMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BGMusic.mp3; sourceTree = "<group>"; };
+		F060BB511245D0150048B2C7 /* laser.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser.wav; sourceTree = "<group>"; };
+		F060BB531245D04C0048B2C7 /* drip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drip.wav; sourceTree = "<group>"; };
+		F060BB551245D0630048B2C7 /* gunshot4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gunshot4.wav; sourceTree = "<group>"; };
+		F060BBAE1245D8FE0048B2C7 /* space1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = space1.jpg; sourceTree = "<group>"; };
 		F0881BCC124098C400235459 /* DefineAllConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineAllConstants.h; sourceTree = "<group>"; };
 		F0881BCD124098C400235459 /* DefineAllConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefineAllConstants.m; sourceTree = "<group>"; };
 		F0881BD0124098D300235459 /* EnemyTank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyTank.h; sourceTree = "<group>"; };
@@ -536,6 +547,7 @@
 		F0881D391240BC4400235459 /* pauseBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseBtn.png; sourceTree = "<group>"; };
 		F0881D3A1240BC4400235459 /* wolfIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wolfIcon.jpg; sourceTree = "<group>"; };
 		F0881D3B1240BC4400235459 /* terrain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = terrain.jpg; sourceTree = "<group>"; };
+		F0C3F2291245DAE9003615A4 /* space2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = space2.jpg; sourceTree = "<group>"; };
 		F0D785A21245C32E0033D9D1 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -908,12 +920,18 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F0C3F2291245DAE9003615A4 /* space2.jpg */,
+				F060BBAE1245D8FE0048B2C7 /* space1.jpg */,
+				F060BB551245D0630048B2C7 /* gunshot4.wav */,
+				F060BB531245D04C0048B2C7 /* drip.wav */,
+				F060BB511245D0150048B2C7 /* laser.wav */,
+				F060BB4F1245CFFE0048B2C7 /* BGMusic.mp3 */,
 				F0D785A21245C32E0033D9D1 /* fire.png */,
+				F0881BE31240992B00235459 /* Sounds */,
 				F0881D2E1240BC4400235459 /* Interface Graphics */,
 				F0881BED1240992B00235459 /* Weapons */,
 				F0881BEA1240992B00235459 /* players */,
 				F0881BE51240992B00235459 /* Explosions */,
-				F0881BE31240992B00235459 /* Sounds */,
 				50F414EC1069373D002A0D5E /* Default.png */,
 				50F414ED1069373D002A0D5E /* fps_images.png */,
 				50F414EE1069373D002A0D5E /* Icon.png */,
@@ -1241,6 +1259,12 @@
 				F0881D471240BC4400235459 /* wolfIcon.jpg in Resources */,
 				F0881D481240BC4400235459 /* terrain.jpg in Resources */,
 				F0D785A31245C32E0033D9D1 /* fire.png in Resources */,
+				F060BB501245CFFE0048B2C7 /* BGMusic.mp3 in Resources */,
+				F060BB521245D0150048B2C7 /* laser.wav in Resources */,
+				F060BB541245D04C0048B2C7 /* drip.wav in Resources */,
+				F060BB561245D0630048B2C7 /* gunshot4.wav in Resources */,
+				F060BBAF1245D8FE0048B2C7 /* space1.jpg in Resources */,
+				F0C3F22A1245DAE9003615A4 /* space2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
