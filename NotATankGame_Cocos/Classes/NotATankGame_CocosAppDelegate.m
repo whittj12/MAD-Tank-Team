@@ -9,7 +9,8 @@
 #import "NotATankGame_CocosAppDelegate.h"
 #import "cocos2d.h"
 #import "MainMenuScene.h"
-#import "GamePlayScene.h"
+#import "Level2Scene.h"
+
 
 @implementation NotATankGame_CocosAppDelegate
 
@@ -56,6 +57,16 @@
 }
 
 
+-(id)init
+{
+	[super init];
+//	gameSounds = [[Sounds alloc] init];
+	
+	[[Sounds sharedSounds] playMenuBGMusic];
+	
+	return self;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
 	[[CCDirector sharedDirector] pause];
 }
@@ -86,6 +97,8 @@
 
 - (void)dealloc {
 	[[CCDirector sharedDirector] release];
+	
+	//[gameSounds release];
 	[window release];
 	[super dealloc];
 }

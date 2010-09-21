@@ -1,16 +1,16 @@
 //
-//  GamePlayScene.h
+//  Level1Scene.h
 //  NotATankGame_Cocos
 //
-//  Created by Amrit on 15/09/10.
+//  Created by Amrit on 20/09/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
 #import "cocos2d.h"
 #import "NotATankGame_CocosAppDelegate.h"
 
+#import "LevelSelectScene.h"
 
-#import "MainMenuScene.h"
 #import "UserTank.h"
 #import "Weapon.h"
 #import "GameEngine.h"
@@ -19,11 +19,16 @@
 #import "Explosions.h"
 #import "Sounds.h"
 
-@interface GamePlayScene : CCLayer {
 
+@interface Level1Scene : CCLayer {
+	
+//	CCSprite * _plane;
+//	CCAction * _moveAction;
+//	CCAction * _flyAroundAction;
+	
 	GameEngine * theGameEngine;
 	
-	CCSprite * playerTankSprite;
+	CCSprite * playerSprite;
 	
 	CCMenuItemLabel * tapToPlayLabelMenuItem;
 	
@@ -31,12 +36,16 @@
 	
 	CCParticleGalaxy * playerTankParticleEffect;
 	
-	Sounds * gameSounds;
+	//Sounds * gameSounds;
 }
+
+//@property(nonatomic, retain) CCSprite * plane;
+//@property(nonatomic, retain) CCAction * moveAction;
+//@property(nonatomic, retain) CCAction * flyAroundAction;
 
 +(id) scene;
 -(void)setUpScene;
--(void)replaceToMainMenuScene;
+-(void)replaceToLevelSelectScene;
 
 -(void)gameLoop:(ccTime)dt;
 -(void)drawUserTankToScreen;

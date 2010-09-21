@@ -9,15 +9,18 @@
 #import "cocos2d.h"
 #import "NotATankGame_CocosAppDelegate.h"
 #import "DefineAllConstants.h"
-#import "GamePlayScene.h"
+#import "SettingsScene.h"
+#import "LevelSelectScene.h"
+
 
 @interface MainMenuScene : CCLayer {
-
+		
 
 }
 
 -(void)addMenuItems;
 +(id) scene;
--(void)replaceToGameScene;
+-(void)replaceToLevelSelectScene;
+-(void)replaceToSettingsScene;
 
 @end

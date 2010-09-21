@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>plane1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 81}, {69, 39}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {69, 39}}</string>
+			<key>sourceSize</key>
+			<string>{69, 39}</string>
+		</dict>
+		<key>plane2.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{144, 2}, {69, 63}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {69, 63}}</string>
+			<key>sourceSize</key>
+			<string>{69, 63}</string>
+		</dict>
+		<key>plane3.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2, 2}, {69, 77}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {69, 77}}</string>
+			<key>sourceSize</key>
+			<string>{69, 77}</string>
+		</dict>
+		<key>plane4.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{73, 2}, {69, 63}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {69, 63}}</string>
+			<key>sourceSize</key>
+			<string>{69, 63}</string>
+		</dict>
+		<key>plane5.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{73, 81}, {69, 39}}</string>
+			<key>offset</key>
+			<string>{0, -0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {69, 39}}</string>
+			<key>sourceSize</key>
+			<string>{69, 39}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{256, 128}</string>
+	</dict>
+</dict>
+</plist>

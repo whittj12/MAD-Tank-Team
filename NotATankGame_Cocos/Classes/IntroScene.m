@@ -1,14 +1,15 @@
 //
-//  MainMenuScene.m
+//  IntroScene.m
 //  NotATankGame_Cocos
 //
-//  Created by Amrit on 15/09/10.
+//  Created by Amrit on 20/09/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "MainMenuScene.h"
+#import "IntroScene.h"
 
-@implementation MainMenuScene
+
+@implementation IntroScene
 
 +(id) scene
 {
@@ -16,7 +17,7 @@
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	MainMenuScene *layer = [MainMenuScene node];
+	IntroScene *layer = [IntroScene node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -38,7 +39,7 @@
 		[self addChild:backgroundSprite];
 		
 		// create and initialize a Label
-		CCLabel* label = [CCLabel labelWithString:@"Main Menu" fontName:@"Marker Felt" fontSize:32];
+		CCLabel* label = [CCLabel labelWithString:@"Intro Scene" fontName:@"Marker Felt" fontSize:32];
 		
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
@@ -48,44 +49,17 @@
 		
 		// add the label as a child to this Layer
 		[self addChild: label];
-		
-		[self addMenuItems];
-		
-		
-		
 	}
 	return self;
 }
 
 
--(void)addMenuItems
-{
-	CCLabel * playGameLabel = [CCLabel labelWithString:@"Play!" fontName:@"Marker Felt" fontSize:24];
-	CCMenuItemLabel * playGameMenuItem = [CCMenuItemLabel itemWithLabel:playGameLabel 
-																target:self 
-															  selector:@selector(replaceToLevelSelectScene)];
-	
-	CCLabel * settingsLabel = [CCLabel labelWithString:@"Settings" fontName:@"Marker Felt" fontSize:24];
-	CCMenuItemLabel * settingsMenuItem = [CCMenuItemLabel itemWithLabel:settingsLabel 
-																target:self 
-															  selector:@selector(replaceToSettingsScene)];
-	
-	//create menu to add menu items to
-	CCMenu * mainMenu = [CCMenu menuWithItems:playGameMenuItem, settingsMenuItem, nil];
-	[mainMenu alignItemsVertically];
-	
-	[self addChild:mainMenu];
-}
 
--(void)replaceToLevelSelectScene
-{
-	[[CCDirector sharedDirector] replaceScene:[CCShrinkGrowTransition transitionWithDuration:0.5f scene:[LevelSelectScene scene]]];
-}
 
--(void)replaceToSettingsScene
-{
-	[[CCDirector sharedDirector] replaceScene:[CCShrinkGrowTransition transitionWithDuration:0.5f scene:[SettingsScene scene]]];
-}
+
+
+
+
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
@@ -98,7 +72,6 @@
 	CCLOG(@"dealloc: %@", self);
 	[super dealloc];
 }
-
 
 
 @end

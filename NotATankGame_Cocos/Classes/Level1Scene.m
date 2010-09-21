@@ -1,16 +1,19 @@
 //
-//  GamePlayScene.m
+//  Level1Scene.m
 //  NotATankGame_Cocos
 //
-//  Created by Amrit on 15/09/10.
+//  Created by Amrit on 20/09/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "GamePlayScene.h"
-#import "CCTouchDispatcher.h"
+#import "Level1Scene.h"
 
-@implementation GamePlayScene
 
+@implementation Level1Scene
+
+//@synthesize plane = _plane;
+//@synthesize moveAction = _moveAction;
+//@synthesize flyAroundAction = _flyAroundAction;
 
 +(id) scene
 {
@@ -18,7 +21,7 @@
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	GamePlayScene *layer = [GamePlayScene node];
+	Level1Scene *layer = [Level1Scene node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -45,15 +48,6 @@
 		
 		self.isTouchEnabled = YES;
 		
-		//add frequently used images to the texture cache
-//		[[CCTextureCache sharedTextureCache] addImage:@"enemyTank1.png"];
-//		[[CCTextureCache sharedTextureCache] addImage:@"playerTank.png"];
-//		
-//		[[CCTextureCache sharedTextureCache] addImage:@"bullet1.png"];
-//		[[CCTextureCache sharedTextureCache] addImage:@"nukerPlane.png"];
-//		[[CCTextureCache sharedTextureCache] addImage:@"rocket.png"];
-//		[[CCTextureCache sharedTextureCache] addImage:@"laserBeam2.png"];
-		
 		playerTankParticleEffect = [[CCParticleGalaxy alloc] initWithTotalParticles:50];
 		playerTankParticleEffect.texture = [[CCTextureCache sharedTextureCache] addImage:@"playerTank.png"];
 		playerTankParticleEffect.position = [theGameEngine getUserTankLocation];
@@ -63,8 +57,11 @@
 		//NSLog(@"playertankparticleeffect retain count %i", [playerTankParticleEffect retainCount]);
 		
 		//play the background music for this scene
-		gameSounds = [[Sounds alloc] init];
-		[gameSounds playLevel1BGMusic];
+		//gameSounds = [[Sounds alloc] init];
+		//[gameSounds playLevel2BGMusic];
+		[[Sounds sharedSounds] playLevel1BGMusic];
+		
+		
 	}
 	return self;
 }
@@ -72,9 +69,33 @@
 
 -(void)drawUserTankToScreen
 {
-	playerTankSprite = [CCSprite spriteWithFile:[theGameEngine getPlayer1TankImageDetail]];
-	playerTankSprite.position = [theGameEngine getUserTankLocation];
-	[self addChild:playerTankSprite];
+	playerSprite = [CCSprite spriteWithFile:[theGameEngine getPlayer1TankImageDetail]];
+	playerSprite.position = [theGameEngine getUserTankLocation];
+	[self addChild:playerSprite];
+
+	
+//	[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"AnimPlane.plist"];
+	
+//	CCSpriteSheet * spriteSheet = [CCSpriteSheet spriteSheetWithFile:@"AnimPlane.png"];
+//	[self addChild: spriteSheet];
+	
+//	NSMutableArray * flyAroundAnimFrames = [NSMutableArray array];
+//	for(int i=1; i<=5; ++i)
+//	{
+//		[flyAroundAnimFrames addObject:
+//		 [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:
+//		  [NSString stringWithFormat:@"plane%d.png", i]]];
+//	}
+//	
+//	CCAnimation * flyAroundAnim = [CCAnimation animationWithName:@"move" delay:0.1f frames:flyAroundAnimFrames];
+//	
+//	self.plane = [CCSprite spriteWithFile:@"plane_1.png"];
+//	_plane.position = [theGameEngine getUserTankLocation];
+//	self.moveAction = [CCRepeatForever actionWithAction:
+//					   [CCAnimate actionWithAnimation:flyAroundAnim restoreOriginalFrame:NO]];
+//	[_plane runAction:_moveAction];
+//	[spriteSheet addChild:_plane];
+	
 }
 
 -(void)gameLoop:(ccTime)dt
@@ -107,14 +128,11 @@
 	CGPoint convertedLocation = [[CCDirector sharedDirector] convertToGL:location];
 	CGPoint newPoint = ccp([theGameEngine getUserTankLocation].x, convertedLocation.y);
 	
-	[playerTankSprite stopAllActions];
+	[playerSprite stopAllActions];
 	//[playerTankSprite runAction: [CCMoveTo actionWithDuration:0.15 position:newPoint]];
-	[playerTankSprite setPosition:newPoint];
+	[playerSprite setPosition:newPoint];
 	//update location of playertank in gamengine
 	[theGameEngine setUserTankLocation:newPoint];
-	
-	//testing particle emitter stuff - 19/09
-	//emitter.position = (convertedLocation);
 	
 	playerTankParticleEffect.position = newPoint;
 }
@@ -177,11 +195,13 @@
 			//play appropriate sound for that bullet
 			switch (theGameEngine.currentlySelectedWeaponID) {
 				case kLasergun:
-					[gameSounds playLaserBeamSound];
+					//[gameSounds playLaserBeamSound];
+					[[Sounds sharedSounds] playLaserBeamSound];
 					break;
 					
 				case kMachinegun:
-					[gameSounds playMachineGunSound];
+					//[gameSounds playMachineGunSound];
+					[[Sounds sharedSounds] playMachineGunSound];
 					break;
 					
 				default:
@@ -194,21 +214,21 @@
 -(void)setUpScene
 {
 	//NOTE : this is probably the wrong way to do a background sprite, but its jsut here for a "quick fix'
-	CCSprite * backgroundSprite = [CCSprite spriteWithFile:@"space1.jpg"];
+	CCSprite * backgroundSprite = [CCSprite spriteWithFile:@"Sky-Day.jpg"];
 	backgroundSprite.position=ccp(240, 160);
 	[self addChild:backgroundSprite];
 	
-	// create and initialize a Label
-	CCLabel* label = [CCLabel labelWithString:@"GamePlay Scene" fontName:@"Marker Felt" fontSize:32];
-	
-	// ask director the the window size
-	CGSize size = [[CCDirector sharedDirector] winSize];
-	
-	// position the label on the center of the screen
-	label.position =  ccp( size.width /2 , 300 );
-	
-	// add the label as a child to this Layer
-	[self addChild: label];
+	//	// create and initialize a Label
+	//	CCLabel* label = [CCLabel labelWithString:@"GamePlay Scene" fontName:@"Marker Felt" fontSize:32];
+	//	
+	//	// ask director the the window size
+	//	CGSize size = [[CCDirector sharedDirector] winSize];
+	//	
+	//	// position the label on the center of the screen
+	//	label.position =  ccp( size.width /2 , 300 );
+	//	
+	//	// add the label as a child to this Layer
+	//	[self addChild: label];
 	
 	int gap = 6;
 	int btnWidth=55;
@@ -219,21 +239,21 @@
 	CCMenuItemImage * xButton = [CCMenuItemImage itemFromNormalImage:@"cancelBtn.png" 
 													   selectedImage:@"playBtn.png"
 															  target:self
-															selector:@selector(replaceToMainMenuScene)];
+															selector:@selector(replaceToLevelSelectScene)];
 	xButton.position = ccp(187, 143);
 	
 	//pause/unpause button
 	CCMenuItemImage * playButton = [CCMenuItemImage itemFromNormalImage:@"playBtn.png" 
-													   selectedImage:@"cancelBtn.png"
-															  target:self
-															selector:@selector(togglePause)];
+														  selectedImage:@"cancelBtn.png"
+																 target:self
+															   selector:@selector(togglePause)];
 	playButton.position = ccp(223, 143);
 	
 	//laser button
 	CCMenuItemImage * laserButton = [CCMenuItemImage itemFromNormalImage:@"laser_icon.png" 
-														  selectedImage:@"shell_icon.png"
-																 target:self
-															   selector:@selector(changeWeapon:)];
+														   selectedImage:@"shell_icon.png"
+																  target:self
+																selector:@selector(changeWeapon:)];
 	btnY = 150 - gap - btnWidth;
 	laserButton.tag=-30;
 	laserButton.position = ccp(btnX, btnY);
@@ -251,18 +271,18 @@
 	
 	//rocket button
 	CCMenuItemImage * rocketButton = [CCMenuItemImage itemFromNormalImage:@"rocket_icon.png" 
-														   selectedImage:@"nuke_icon.png"
-																  target:self
-																selector:@selector(changeWeapon:)];
+															selectedImage:@"nuke_icon.png"
+																   target:self
+																 selector:@selector(changeWeapon:)];
 	btnY = btnY - gap - btnWidth;
 	rocketButton.tag = -32;
 	rocketButton.position = ccp(btnX, btnY);
 	
 	//nuke button
 	CCMenuItemImage * nukeButton = [CCMenuItemImage itemFromNormalImage:@"nuke_icon.png" 
-														   selectedImage:@"rocket_icon.png"
-																  target:self
-																selector:@selector(changeWeapon:)];
+														  selectedImage:@"rocket_icon.png"
+																 target:self
+															   selector:@selector(changeWeapon:)];
 	btnY = btnY - gap - btnWidth;
 	nukeButton.tag=-33;
 	nukeButton.position = ccp(btnX, btnY);
@@ -271,8 +291,8 @@
 	//tap to begin label
 	CCLabel * tapToPlayLabel = [CCLabel labelWithString:@"Tap To Play" fontName:@"Marker Felt" fontSize:32];
 	tapToPlayLabelMenuItem = [CCMenuItemLabel itemWithLabel:tapToPlayLabel 
-																target:self 
-															  selector:@selector(togglePause)];
+													 target:self 
+												   selector:@selector(togglePause)];
 	tapToPlayLabelMenuItem.position = ccp(0,0);
 	tapToPlayLabelMenuItem.visible = YES;
 	
@@ -382,7 +402,7 @@
 		case -30:
 			[theGameEngine changeCurrentlySelectedWeapon:kLasergun];
 			break;
-
+			
 		case -31:
 			[theGameEngine changeCurrentlySelectedWeapon:kMachinegun];
 			break;
@@ -402,8 +422,6 @@
 
 -(void)togglePause
 {
-	
-	
 	//also try change image of buttons here too (play to pause etc.)
 	
 	
@@ -418,12 +436,12 @@
 		[theGameEngine unPauseGame];
 		tapToPlayLabelMenuItem.visible = NO;
 	}
-
+	
 }
--(void)replaceToMainMenuScene
+-(void)replaceToLevelSelectScene
 {
 	[theGameEngine pauseGame];
-	[[CCDirector sharedDirector] replaceScene:[CCShrinkGrowTransition transitionWithDuration:0.5f scene:[MainMenuScene scene]]];
+	[[CCDirector sharedDirector] replaceScene:[CCShrinkGrowTransition transitionWithDuration:0.5f scene:[LevelSelectScene scene]]];
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -442,7 +460,11 @@
 	[theGameEngine release];
 	//NSLog(@"playertankparticleeffect retain count %i", [playerTankParticleEffect retainCount]);
 	[playerTankParticleEffect release];
-	[gameSounds release];
+	
+//	self.plane = nil;
+//	self.moveAction = nil;
+	
+	
 	[super dealloc];
 }
 

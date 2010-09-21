@@ -8,9 +8,10 @@
 
 //#import <Foundation/Foundation.h>
 //#import <AudioToolbox/AudioToolbox.h>
-#import "cocos2d.h"
-#import "CDAudioManager.h"
+//#import "cocos2d.h"
+//#import "CDAudioManager.h"
 #import "SimpleAudioEngine.h"
+#import "SynthesizeSingleton.h"
 
 @interface Sounds : NSObject {
 	
@@ -18,7 +19,11 @@
 //	SystemSoundID soundID;
 }
 
++(Sounds *)sharedSounds;
+
+-(void)playMenuBGMusic;
 -(void)playLevel1BGMusic;
+-(void)playLevel2BGMusic;
 -(void)playLaserBeamSound;
 -(void)playMachineGunSound;
 

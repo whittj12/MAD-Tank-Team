@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DefineAllConstants.h"
+#import "Sounds.h"
 
 @interface NotATankGame_CocosAppDelegate : NSObject <UIApplicationDelegate> {
 	UIWindow *window;
+	
+	//Sounds * gameSounds;
 }
 
 @property (nonatomic, retain) UIWindow *window;

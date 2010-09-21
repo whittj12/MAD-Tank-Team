@@ -11,6 +11,12 @@
 
 @implementation Sounds
 
+/*
+ Turns this class into a singleton really easily, thanks to Matt Gallagher,
+ provided free of use, sourced http://cocoawithlove.com/2008/11/singletons-appdelegates-and-top-level.html , 20/09/10
+ */
+SYNTHESIZE_SINGLETON_FOR_CLASS(Sounds);
+
 -(id)init
 {
 	[super init];
@@ -32,7 +38,20 @@
 {
 	[[SimpleAudioEngine sharedEngine] playEffect:@"gunshot4.wav"];//play a sound
 }
+
+-(void)playMenuBGMusic
+{
+	[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"BGMusic.mp3" loop:TRUE];//play background music
+	[CDAudioManager sharedManager].backgroundMusic.volume = 0.9f;
+}
+
 -(void)playLevel1BGMusic
+{
+	[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"BGMusic.mp3" loop:TRUE];//play background music
+	[CDAudioManager sharedManager].backgroundMusic.volume = 0.9f;
+}
+
+-(void)playLevel2BGMusic
 {
 	/*
 	 

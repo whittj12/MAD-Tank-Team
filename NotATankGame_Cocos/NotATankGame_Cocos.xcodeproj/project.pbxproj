@@ -234,19 +234,14 @@
 		F0881BE0124098D400235459 /* Sounds.m in Sources */ = {isa = PBXBuildFile; fileRef = F0881BD9124098D400235459 /* Sounds.m */; };
 		F0881BE1124098D400235459 /* Weapon.m in Sources */ = {isa = PBXBuildFile; fileRef = F0881BDB124098D400235459 /* Weapon.m */; };
 		F0881BF31240992B00235459 /* laserNoise.wav in Resources */ = {isa = PBXBuildFile; fileRef = F0881BE41240992B00235459 /* laserNoise.wav */; };
-		F0881BF41240992B00235459 /* explosion1-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BE61240992B00235459 /* explosion1-2.png */; };
-		F0881BF51240992B00235459 /* explosion1-3.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BE71240992B00235459 /* explosion1-3.png */; };
-		F0881BF61240992B00235459 /* explosion1-4.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BE81240992B00235459 /* explosion1-4.png */; };
-		F0881BF71240992B00235459 /* explosion1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BE91240992B00235459 /* explosion1-1.png */; };
 		F0881BF81240992B00235459 /* playerTank.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BEB1240992B00235459 /* playerTank.png */; };
 		F0881BF91240992B00235459 /* enemyTank1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BEC1240992B00235459 /* enemyTank1.png */; };
 		F0881BFA1240992B00235459 /* bullet1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BEE1240992B00235459 /* bullet1.png */; };
 		F0881BFB1240992B00235459 /* nukerPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BEF1240992B00235459 /* nukerPlane.png */; };
-		F0881BFC1240992B00235459 /* shell1.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BF01240992B00235459 /* shell1.png */; };
 		F0881BFD1240992B00235459 /* rocket.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BF11240992B00235459 /* rocket.png */; };
 		F0881BFE1240992B00235459 /* laserBeam2.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881BF21240992B00235459 /* laserBeam2.png */; };
 		F0881C3412409A8900235459 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F0881C3312409A8900235459 /* MainMenuScene.m */; };
-		F0881C3A12409B5500235459 /* GamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F0881C3912409B5500235459 /* GamePlayScene.m */; };
+		F0881C3A12409B5500235459 /* Level2Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = F0881C3912409B5500235459 /* Level2Scene.m */; };
 		F0881D3C1240BC4400235459 /* playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881D2F1240BC4400235459 /* playBtn.png */; };
 		F0881D3D1240BC4400235459 /* buttonBG.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881D301240BC4400235459 /* buttonBG.png */; };
 		F0881D3E1240BC4400235459 /* cancelBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = F0881D311240BC4400235459 /* cancelBtn.png */; };
@@ -261,6 +256,13 @@
 		F0881D471240BC4400235459 /* wolfIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0881D3A1240BC4400235459 /* wolfIcon.jpg */; };
 		F0881D481240BC4400235459 /* terrain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0881D3B1240BC4400235459 /* terrain.jpg */; };
 		F0C3F22A1245DAE9003615A4 /* space2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0C3F2291245DAE9003615A4 /* space2.jpg */; };
+		F0C4C14012472AB4002D88EE /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C4C13F12472AB4002D88EE /* IntroScene.m */; };
+		F0C4C14C12472B88002D88EE /* LevelSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C4C14B12472B88002D88EE /* LevelSelectScene.m */; };
+		F0C4C18C12473176002D88EE /* SettingsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C4C18B12473176002D88EE /* SettingsScene.m */; };
+		F0C4C1A1124735BD002D88EE /* Level1Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C4C1A0124735BD002D88EE /* Level1Scene.m */; };
+		F0C4C1C812473757002D88EE /* Sky-Day.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0C4C1C712473757002D88EE /* Sky-Day.jpg */; };
+		F0D7279912479A9E00D76995 /* AnimPlane.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0D7279712479A9E00D76995 /* AnimPlane.plist */; };
+		F0D7279A12479A9E00D76995 /* AnimPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D7279812479A9E00D76995 /* AnimPlane.png */; };
 		F0D785A31245C32E0033D9D1 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D785A21245C32E0033D9D1 /* fire.png */; };
 /* End PBXBuildFile section */
 
@@ -509,15 +511,10 @@
 		F0881BDA124098D400235459 /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
 		F0881BDB124098D400235459 /* Weapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weapon.m; sourceTree = "<group>"; };
 		F0881BE41240992B00235459 /* laserNoise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laserNoise.wav; sourceTree = "<group>"; };
-		F0881BE61240992B00235459 /* explosion1-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explosion1-2.png"; sourceTree = "<group>"; };
-		F0881BE71240992B00235459 /* explosion1-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explosion1-3.png"; sourceTree = "<group>"; };
-		F0881BE81240992B00235459 /* explosion1-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explosion1-4.png"; sourceTree = "<group>"; };
-		F0881BE91240992B00235459 /* explosion1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explosion1-1.png"; sourceTree = "<group>"; };
 		F0881BEB1240992B00235459 /* playerTank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerTank.png; sourceTree = "<group>"; };
 		F0881BEC1240992B00235459 /* enemyTank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyTank1.png; sourceTree = "<group>"; };
 		F0881BEE1240992B00235459 /* bullet1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet1.png; sourceTree = "<group>"; };
 		F0881BEF1240992B00235459 /* nukerPlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nukerPlane.png; sourceTree = "<group>"; };
-		F0881BF01240992B00235459 /* shell1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shell1.png; sourceTree = "<group>"; };
 		F0881BF11240992B00235459 /* rocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocket.png; sourceTree = "<group>"; };
 		F0881BF21240992B00235459 /* laserBeam2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laserBeam2.png; sourceTree = "<group>"; };
 		F0881C001240994100235459 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
@@ -532,8 +529,8 @@
 		F0881C091240994100235459 /* HowToPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToPlayViewController.m; sourceTree = "<group>"; };
 		F0881C3212409A8900235459 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		F0881C3312409A8900235459 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
-		F0881C3812409B5500235459 /* GamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayScene.h; sourceTree = "<group>"; };
-		F0881C3912409B5500235459 /* GamePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayScene.m; sourceTree = "<group>"; };
+		F0881C3812409B5500235459 /* Level2Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level2Scene.h; sourceTree = "<group>"; };
+		F0881C3912409B5500235459 /* Level2Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level2Scene.m; sourceTree = "<group>"; };
 		F0881D2F1240BC4400235459 /* playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtn.png; sourceTree = "<group>"; };
 		F0881D301240BC4400235459 /* buttonBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBG.png; sourceTree = "<group>"; };
 		F0881D311240BC4400235459 /* cancelBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelBtn.png; sourceTree = "<group>"; };
@@ -548,6 +545,18 @@
 		F0881D3A1240BC4400235459 /* wolfIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wolfIcon.jpg; sourceTree = "<group>"; };
 		F0881D3B1240BC4400235459 /* terrain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = terrain.jpg; sourceTree = "<group>"; };
 		F0C3F2291245DAE9003615A4 /* space2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = space2.jpg; sourceTree = "<group>"; };
+		F0C4C13E12472AB4002D88EE /* IntroScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroScene.h; sourceTree = "<group>"; };
+		F0C4C13F12472AB4002D88EE /* IntroScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroScene.m; sourceTree = "<group>"; };
+		F0C4C14A12472B88002D88EE /* LevelSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectScene.h; sourceTree = "<group>"; };
+		F0C4C14B12472B88002D88EE /* LevelSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectScene.m; sourceTree = "<group>"; };
+		F0C4C18A12473176002D88EE /* SettingsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsScene.h; sourceTree = "<group>"; };
+		F0C4C18B12473176002D88EE /* SettingsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsScene.m; sourceTree = "<group>"; };
+		F0C4C19F124735BD002D88EE /* Level1Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1Scene.h; sourceTree = "<group>"; };
+		F0C4C1A0124735BD002D88EE /* Level1Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level1Scene.m; sourceTree = "<group>"; };
+		F0C4C1C712473757002D88EE /* Sky-Day.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sky-Day.jpg"; sourceTree = "<group>"; };
+		F0D726451247799F00D76995 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		F0D7279712479A9E00D76995 /* AnimPlane.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AnimPlane.plist; sourceTree = "<group>"; };
+		F0D7279812479A9E00D76995 /* AnimPlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimPlane.png; sourceTree = "<group>"; };
 		F0D785A21245C32E0033D9D1 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -602,6 +611,7 @@
 				504DFC6910AF1739006D82FE /* LICENSE.cocosdenshion */,
 				506EDAA3102F461B00A389B3 /* cocos2d Sources */,
 				2D500B1D0D5A766B00DBA0E3 /* Classes */,
+				F0881BFF1240994100235459 /* View Controllers (no longer used now) */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				50F414EB1069373D002A0D5E /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -638,10 +648,10 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F0D726451247799F00D76995 /* SynthesizeSingleton.h */,
 				1F3B9A2C0EF2145700286867 /* NotATankGame_CocosAppDelegate.h */,
 				1F3B9A2B0EF2145700286867 /* NotATankGame_CocosAppDelegate.m */,
 				F0881C1F124099AA00235459 /* Scenes */,
-				F0881BFF1240994100235459 /* View Controllers (no longer used now) */,
 				F0881BCF124098D300235459 /* Game Files */,
 				F0881BCB124098C400235459 /* App Settings */,
 			);
@@ -920,6 +930,9 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F0D7279712479A9E00D76995 /* AnimPlane.plist */,
+				F0D7279812479A9E00D76995 /* AnimPlane.png */,
+				F0C4C1C712473757002D88EE /* Sky-Day.jpg */,
 				F0C3F2291245DAE9003615A4 /* space2.jpg */,
 				F060BBAE1245D8FE0048B2C7 /* space1.jpg */,
 				F060BB551245D0630048B2C7 /* gunshot4.wav */,
@@ -931,7 +944,6 @@
 				F0881D2E1240BC4400235459 /* Interface Graphics */,
 				F0881BED1240992B00235459 /* Weapons */,
 				F0881BEA1240992B00235459 /* players */,
-				F0881BE51240992B00235459 /* Explosions */,
 				50F414EC1069373D002A0D5E /* Default.png */,
 				50F414ED1069373D002A0D5E /* fps_images.png */,
 				50F414EE1069373D002A0D5E /* Icon.png */,
@@ -976,17 +988,6 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
-		F0881BE51240992B00235459 /* Explosions */ = {
-			isa = PBXGroup;
-			children = (
-				F0881BE61240992B00235459 /* explosion1-2.png */,
-				F0881BE71240992B00235459 /* explosion1-3.png */,
-				F0881BE81240992B00235459 /* explosion1-4.png */,
-				F0881BE91240992B00235459 /* explosion1-1.png */,
-			);
-			name = Explosions;
-			sourceTree = "<group>";
-		};
 		F0881BEA1240992B00235459 /* players */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,7 +1002,6 @@
 			children = (
 				F0881BEE1240992B00235459 /* bullet1.png */,
 				F0881BEF1240992B00235459 /* nukerPlane.png */,
-				F0881BF01240992B00235459 /* shell1.png */,
 				F0881BF11240992B00235459 /* rocket.png */,
 				F0881BF21240992B00235459 /* laserBeam2.png */,
 			);
@@ -1023,6 +1023,7 @@
 				F0881C091240994100235459 /* HowToPlayViewController.m */,
 			);
 			name = "View Controllers (no longer used now)";
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		F0881C1F124099AA00235459 /* Scenes */ = {
@@ -1030,8 +1031,13 @@
 			children = (
 				F0881C3212409A8900235459 /* MainMenuScene.h */,
 				F0881C3312409A8900235459 /* MainMenuScene.m */,
-				F0881C3812409B5500235459 /* GamePlayScene.h */,
-				F0881C3912409B5500235459 /* GamePlayScene.m */,
+				F0C4C14A12472B88002D88EE /* LevelSelectScene.h */,
+				F0C4C14B12472B88002D88EE /* LevelSelectScene.m */,
+				F0C4C13E12472AB4002D88EE /* IntroScene.h */,
+				F0C4C13F12472AB4002D88EE /* IntroScene.m */,
+				F0C4C18A12473176002D88EE /* SettingsScene.h */,
+				F0C4C18B12473176002D88EE /* SettingsScene.m */,
+				F0C4C1E812473891002D88EE /* Game Levels */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1054,6 +1060,17 @@
 				F0881D3B1240BC4400235459 /* terrain.jpg */,
 			);
 			name = "Interface Graphics";
+			sourceTree = "<group>";
+		};
+		F0C4C1E812473891002D88EE /* Game Levels */ = {
+			isa = PBXGroup;
+			children = (
+				F0C4C19F124735BD002D88EE /* Level1Scene.h */,
+				F0C4C1A0124735BD002D88EE /* Level1Scene.m */,
+				F0881C3812409B5500235459 /* Level2Scene.h */,
+				F0881C3912409B5500235459 /* Level2Scene.m */,
+			);
+			name = "Game Levels";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1234,15 +1251,10 @@
 				50F414F11069373D002A0D5E /* fps_images.png in Resources */,
 				50F414F21069373D002A0D5E /* Icon.png in Resources */,
 				F0881BF31240992B00235459 /* laserNoise.wav in Resources */,
-				F0881BF41240992B00235459 /* explosion1-2.png in Resources */,
-				F0881BF51240992B00235459 /* explosion1-3.png in Resources */,
-				F0881BF61240992B00235459 /* explosion1-4.png in Resources */,
-				F0881BF71240992B00235459 /* explosion1-1.png in Resources */,
 				F0881BF81240992B00235459 /* playerTank.png in Resources */,
 				F0881BF91240992B00235459 /* enemyTank1.png in Resources */,
 				F0881BFA1240992B00235459 /* bullet1.png in Resources */,
 				F0881BFB1240992B00235459 /* nukerPlane.png in Resources */,
-				F0881BFC1240992B00235459 /* shell1.png in Resources */,
 				F0881BFD1240992B00235459 /* rocket.png in Resources */,
 				F0881BFE1240992B00235459 /* laserBeam2.png in Resources */,
 				F0881D3C1240BC4400235459 /* playBtn.png in Resources */,
@@ -1265,6 +1277,9 @@
 				F060BB561245D0630048B2C7 /* gunshot4.wav in Resources */,
 				F060BBAF1245D8FE0048B2C7 /* space1.jpg in Resources */,
 				F0C3F22A1245DAE9003615A4 /* space2.jpg in Resources */,
+				F0C4C1C812473757002D88EE /* Sky-Day.jpg in Resources */,
+				F0D7279912479A9E00D76995 /* AnimPlane.plist in Resources */,
+				F0D7279A12479A9E00D76995 /* AnimPlane.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1284,7 +1299,11 @@
 				F0881BE0124098D400235459 /* Sounds.m in Sources */,
 				F0881BE1124098D400235459 /* Weapon.m in Sources */,
 				F0881C3412409A8900235459 /* MainMenuScene.m in Sources */,
-				F0881C3A12409B5500235459 /* GamePlayScene.m in Sources */,
+				F0881C3A12409B5500235459 /* Level2Scene.m in Sources */,
+				F0C4C14012472AB4002D88EE /* IntroScene.m in Sources */,
+				F0C4C14C12472B88002D88EE /* LevelSelectScene.m in Sources */,
+				F0C4C18C12473176002D88EE /* SettingsScene.m in Sources */,
+				F0C4C1A1124735BD002D88EE /* Level1Scene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
