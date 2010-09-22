@@ -48,12 +48,6 @@
 		
 		self.isTouchEnabled = YES;
 		
-		playerTankParticleEffect = [[CCParticleGalaxy alloc] initWithTotalParticles:50];
-		playerTankParticleEffect.texture = [[CCTextureCache sharedTextureCache] addImage:@"playerTank.png"];
-		playerTankParticleEffect.position = [theGameEngine getUserTankLocation];
-		playerTankParticleEffect.life=1;
-		[self addChild:playerTankParticleEffect z:10];
-		playerTankParticleEffect.autoRemoveOnFinish = YES;
 		//NSLog(@"playertankparticleeffect retain count %i", [playerTankParticleEffect retainCount]);
 		
 		//play the background music for this scene
@@ -73,6 +67,15 @@
 	playerSprite.position = [theGameEngine getUserTankLocation];
 	[self addChild:playerSprite];
 
+	
+	playerTankParticleEffect = [[CCParticleGalaxy alloc] initWithTotalParticles:50];
+	playerTankParticleEffect.texture = [[CCTextureCache sharedTextureCache] addImage:@"playerTank.png"];
+	playerTankParticleEffect.position = [theGameEngine getUserTankLocation];
+	playerTankParticleEffect.life=1;
+	playerTankParticleEffect.autoRemoveOnFinish = YES;
+	[self addChild:playerTankParticleEffect z:10];
+	
+	
 	
 //	[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"AnimPlane.plist"];
 	
@@ -214,7 +217,8 @@
 -(void)setUpScene
 {
 	//NOTE : this is probably the wrong way to do a background sprite, but its jsut here for a "quick fix'
-	CCSprite * backgroundSprite = [CCSprite spriteWithFile:@"Sky-Day.jpg"];
+//	CCSprite * backgroundSprite = [CCSprite spriteWithFile:@"Sky-Day.jpg"];
+	CCSprite * backgroundSprite = [CCSprite spriteWithFile:@"space2.jpg"];
 	backgroundSprite.position=ccp(240, 160);
 	[self addChild:backgroundSprite];
 	
@@ -336,26 +340,16 @@
 -(void) drawCollisionExplosionParticles:(CGPoint)collisionLocation
 							 imagesName:(NSString *) imageName
 {
-	tankExplosions = [[CCQuadParticleSystem alloc] initWithTotalParticles:15];
-	tankExplosions.duration=0.5f;
-	tankExplosions.gravity=CGPointZero;
 	
-	tankExplosions.angle = 90;
-	tankExplosions.angleVar=360;
-	tankExplosions.speed=160;
-	tankExplosions.speedVar=20;
-	tankExplosions.radialAccel=-120;
-	tankExplosions.radialAccelVar=0;
-	tankExplosions.tangentialAccel=30;
-	tankExplosions.tangentialAccelVar=0;
+	//CCParticleSystem * tankExplosions = [ARCH_OPTIMAL_PARTICLE_SYSTEM particleWithFile:@"fx-explosion2.plist"];
+	//CCParticleGalaxy * tankExplosions = [[CCParticleGalaxy alloc] initWithTotalParticles:50];
+	//CCQuadParticleSystem * tankExplosions = [CCQuadParticleSystem particleWithFile:@"fx-explosion2.plist"];
+	//tankExplosions.duration=1.0f;
+	//tankExplosions.texture = [[CCTextureCache sharedTextureCache] addImage:imageName];
 	
-	tankExplosions.life=1;
-	tankExplosions.lifeVar=1;
+	//CCQuadParticleSystem * tankExplosions = [[CCQuadParticleSystem alloc] initWithTotalParticles:15];
 	
-	tankExplosions.startSpin=0;
-	tankExplosions.startSpinVar=0;
-	tankExplosions.endSpin=0;
-	tankExplosions.endSpinVar=0;
+	CCQuadParticleSystem * tankExplosions = [CCQuadParticleSystem particleWithFile:@"fx-explosion2.plist"];
 	ccColor4F startColor = {0.5f, 0.5f, 0.5f, 1.0f};
 	tankExplosions.startColor = startColor;
 	ccColor4F startColorVar = {0.5f, 0.5f, 0.5f, 1.0f};
@@ -369,15 +363,57 @@
 	tankExplosions.startSizeVar=10.0f;
 	tankExplosions.endSize = kParticleStartSizeEqualToEndSize;
 	
-	tankExplosions.emissionRate = tankExplosions.totalParticles/tankExplosions.life;
-	
-	tankExplosions.blendAdditive=YES;
-	
-	//emitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"enemyTank1.png"];
 	tankExplosions.texture = [[CCTextureCache sharedTextureCache] addImage:imageName];
+	
+	tankExplosions.positionType = kCCPositionTypeFree;
 	tankExplosions.position = collisionLocation;
-	[self addChild:tankExplosions z:10];
+	//tankExplosions.life = 1;
 	tankExplosions.autoRemoveOnFinish=YES;
+	[self addChild:tankExplosions z:10];
+	
+	
+//	CCQuadParticleSystem * tankExplosions = [[CCQuadParticleSystem alloc] initWithTotalParticles:15];
+//	tankExplosions.duration=0.5f;
+//	tankExplosions.gravity=CGPointZero;
+//	
+//	tankExplosions.angle = 90;
+//	tankExplosions.angleVar=360;
+//	tankExplosions.speed=160;
+//	tankExplosions.speedVar=20;
+//	tankExplosions.radialAccel=-120;
+//	tankExplosions.radialAccelVar=0;
+//	tankExplosions.tangentialAccel=30;
+//	tankExplosions.tangentialAccelVar=0;
+//	
+//	tankExplosions.life=1;
+//	tankExplosions.lifeVar=1;
+//	
+//	tankExplosions.startSpin=0;
+//	tankExplosions.startSpinVar=0;
+//	tankExplosions.endSpin=0;
+//	tankExplosions.endSpinVar=0;
+//	ccColor4F startColor = {0.5f, 0.5f, 0.5f, 1.0f};
+//	tankExplosions.startColor = startColor;
+//	ccColor4F startColorVar = {0.5f, 0.5f, 0.5f, 1.0f};
+//	tankExplosions.startColorVar = startColorVar;
+//	ccColor4F endColor = {0.1f, 0.1f, 0.1f, 0.2f};
+//	tankExplosions.endColor = endColor;
+//	ccColor4F endColorVar = {0.1f, 0.1f, 0.1f, 0.2f};
+//	tankExplosions.endColorVar=endColorVar;
+//	
+//	tankExplosions.startSize = 30.0f;
+//	tankExplosions.startSizeVar=10.0f;
+//	tankExplosions.endSize = kParticleStartSizeEqualToEndSize;
+//	
+//	tankExplosions.emissionRate = tankExplosions.totalParticles/tankExplosions.life;
+//	
+//	tankExplosions.blendAdditive=YES;
+//	
+//	tankExplosions.texture = [[CCTextureCache sharedTextureCache] addImage:imageName];
+//	tankExplosions.position = collisionLocation;
+//	tankExplosions.autoRemoveOnFinish=YES;
+//	[self addChild:tankExplosions z:10];
+//	
 	
 	//NSLog(@"tankexplosions retaincount %i", [tankExplosions retainCount]);
 }

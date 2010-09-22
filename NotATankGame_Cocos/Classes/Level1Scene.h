@@ -31,8 +31,8 @@
 	CCSprite * playerSprite;
 	
 	CCMenuItemLabel * tapToPlayLabelMenuItem;
-	
-	CCQuadParticleSystem * tankExplosions;
+
+	//CCQuadParticleSystem * tankExplosions;
 	
 	CCParticleGalaxy * playerTankParticleEffect;
 	

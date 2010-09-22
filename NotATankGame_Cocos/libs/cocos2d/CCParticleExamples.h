@@ -27,6 +27,20 @@
 #import "CCPointParticleSystem.h"
 #import "CCQuadParticleSystem.h"
 
+
+// build each architecture with the optimal particle system
+#ifdef __ARM_NEON__
+// armv7
+#define ARCH_OPTIMAL_PARTICLE_SYSTEM CCQuadParticleSystem
+#elif __arm__ || TARGET_IPHONE_SIMULATOR
+// armv6 or simulator
+#define ARCH_OPTIMAL_PARTICLE_SYSTEM CCPointParticleSystem
+#else
+#error(unknown architecture)
+#endif
+
+
+
 //! A fire particle system
 @interface CCParticleFire: CCQuadParticleSystem
 {
